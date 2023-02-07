@@ -1,190 +1,47 @@
 [
   {
-    "chef": {
-      "name": "",
-      "portrait": "",
-      "isChefOfTheWeek": false,
-      "isNew": false,
-      "viewCount": "",
-      "resturants": [
-        {
-          "name": "",
-          "img": "",
-          "dishes": [
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": true,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            }
-          ],
-          "hours": "",
-          "address": "",
-          "rating": ""
-        },
-        {
-          "name": "",
-          "img": "",
-          "dishes": [
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": true,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            }
-          ],
-          "hours": "",
-          "address": "",
-          "rating": ""
-        },
-        {
-          "name": "",
-          "img": "",
-          "dishes": [
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": true,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            },
-            {
-              "name": "",
-              "ingredients": "",
-              "price": "",
-              "image": "",
-              "isSignatueDish": false,
-              "isSpicy": "",
-              "isVegan": "",
-              "isVegitarian": ""
-            }
-          ],
-          "hours": "",
-          "address": "",
-          "rating": ""
-        }
-      ]
-    }
+    "chefs": [
+      {
+        "name": "",
+        "portrait": "",
+        "isChefOfTheWeek": false,
+        "isNew": false,
+        "viewCount": "",
+        "resturants": []
+      }
+    ],
+    "resturants": [
+      {
+        "id": 1,
+        "name": "",
+        "img": "",
+        "hours": "",
+        "address": "",
+        "rating": "",
+        "chefID": 1
+      },
+      {
+        "id": 2,
+        "name": "",
+        "img": "",
+        "hours": "",
+        "address": "",
+        "rating": "",
+        "chefID": 2
+      }
+    ],
+    "dishes": [
+      {
+        "resturantID": 1,
+        "name": "",
+        "ingredients": "",
+        "price": "",
+        "image": "",
+        "isSignatueDish": true,
+        "isSpicy": "",
+        "isVegan": "",
+        "isVegitarian": ""
+      }
+    ]
   }
 ]
