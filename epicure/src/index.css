@@ -45,6 +45,18 @@ input {
   /* identical to box height, or 112% */
   letter-spacing: 1.97px;
 }
+h1 {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 32px;
+  /* or 133% */
+
+  letter-spacing: 1.97px;
+
+  color: #000000;
+}
 .nav-bar {
   display: flex;
   justify-content: center;
@@ -147,7 +159,7 @@ input {
 }
 
 .links {
-  font-family: 'Helvetica Neue';
+  font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 200;
   font-size: 18px;
@@ -156,4 +168,67 @@ input {
   color: #000000;
   text-align: start;
   text-transform: none;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 126px;
+  gap: 18px;
+
+  width: 776px;
+  height: 221px;
+
+  background: rgba(255, 255, 255, 0.88);
+}
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 696px;
+  left: 0px;
+  top: 64px;
+  background: url(./assets/hero-picture@2x.png);
+}
+.hero-desc {
+  width: 402px;
+  line-height: 40px;
+}
+.hero-search {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 6px 12px;
+gap: 16px;
+
+width: 505px;
+height: 48px;
+
+border: 0.5px solid #000000;
+border-radius: 4px;
+}
+#search-hero {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+width: 433px;
+height: 38px;
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 200;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+letter-spacing: 1.29px;
+outline: 0;
+background: transparent;
+cursor: pointer;
+border: 0;
+
+}
+.search-button-logo-bigger {
+  width: 32px;
+  height: 32px; 
 }
