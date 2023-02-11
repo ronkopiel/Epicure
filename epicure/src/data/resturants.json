@@ -2,45 +2,92 @@
   {
     "chefs": [
       {
-        "name": "",
+        "name": "Ran Shmueli",
         "portrait": "",
         "isChefOfTheWeek": false,
         "isNew": false,
         "viewCount": "",
-        "resturants": []
+        "resturants": [1]
+      },
+      {
+        "name": "Meir Adoni",
+        "portrait": "",
+        "isChefOfTheWeek": false,
+        "isNew": false,
+        "viewCount": "",
+        "resturants": [2]
+      },
+      {
+        "name": "Yanir Green",
+        "portrait": "",
+        "isChefOfTheWeek": false,
+        "isNew": false,
+        "viewCount": "",
+        "resturants": [3]
       }
     ],
     "resturants": [
       {
         "id": 1,
-        "name": "",
-        "img": "",
+        "name": "Claro",
+        "img": "./assets/claro@3x.png",
         "hours": "",
         "address": "",
-        "rating": "",
+        "rating": 4,
         "chefID": 1
       },
       {
         "id": 2,
-        "name": "",
-        "img": "",
+        "name": "Lumina",
+        "img": "./assets/mizlala-gret-mullet-fillet-desktop@2x.png",
         "hours": "",
         "address": "",
-        "rating": "",
+        "rating": 3,
         "chefID": 2
+      },
+      {
+        "id": 3,
+        "name": "Tiger Lilly",
+        "img": "./assets/tiger-lili@3x.png",
+        "hours": "",
+        "address": "",
+        "rating": 4,
+        "chefID": 3
       }
     ],
     "dishes": [
       {
         "resturantID": 1,
-        "name": "",
-        "ingredients": "",
+        "name": "Pad Ki Mao",
+        "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
         "price": "",
-        "image": "",
+        "image": "./assets/rectangle_2@3x.png",
         "isSignatueDish": true,
-        "isSpicy": "",
+        "isSpicy": true,
         "isVegan": "",
         "isVegitarian": ""
+      },
+      {
+        "resturantID": 2,
+        "name": "Garbanzo Frito",
+        "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
+        "price": 98,
+        "image": "./assets/garbanzoDesktop.png",
+        "isSignatueDish": true,
+        "isSpicy": false,
+        "isVegan": false,
+        "isVegitarian": false
+      },
+      {
+        "resturantID": 3,
+        "name": "Smoked Pizza",
+        "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
+        "price": "",
+        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "isSignatueDish": true,
+        "isSpicy": false,
+        "isVegan": true,
+        "isVegitarian": false
       }
     ]
   }
