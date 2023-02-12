@@ -18,6 +18,8 @@ declare module namespace {
         address: string;
         rating: number;
         chefID: number;
+        viewCount: number;
+        chefName: string;
     }
 
     export interface Dish {

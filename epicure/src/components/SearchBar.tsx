@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import search from "../assets/Search.svg";
 
 const SearchBar:React.FC = () => {
   const [content, setContent] = useState("");
@@ -11,7 +10,7 @@ const SearchBar:React.FC = () => {
         <div className="search">
           <input type="search" id="search-bar" placeholder="Search for restaurant cuisine, chef" />
           <button className="search-button">
-            <img src={search} alt="" className="search-button-logo" />
+            <img src="/assets/Search.svg" alt="" className="search-button-logo" />
           </button>
         </div>
       </div>

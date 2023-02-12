@@ -1,5 +1,4 @@
 import React from "react";
-import SearchBar from "../../components/SearchBar";
 import SearchHero from "./SearchHero";
 
 const Hero: React.FC = () => {
