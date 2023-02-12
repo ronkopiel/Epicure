@@ -7,7 +7,8 @@
         "isChefOfTheWeek": false,
         "isNew": false,
         "viewCount": "",
-        "resturants": [1]
+        "resturants": [1],
+        "id":1
       },
       {
         "name": "Meir Adoni",
@@ -15,7 +16,8 @@
         "isChefOfTheWeek": false,
         "isNew": false,
         "viewCount": "",
-        "resturants": [2]
+        "resturants": [2],
+        "id":2
       },
       {
         "name": "Yanir Green",
@@ -23,10 +25,11 @@
         "isChefOfTheWeek": false,
         "isNew": false,
         "viewCount": "",
-        "resturants": [3]
+        "resturants": [3],
+        "id":3
       }
     ],
-    "resturants": [
+    "restaurants": [
       {
         "id": 1,
         "name": "Claro",
