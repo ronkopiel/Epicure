@@ -20,6 +20,7 @@ declare module namespace {
         chefID: number;
         viewCount: number;
         chefName: string;
+        signatureDishID:number;
     }
 
     export interface Dish {
@@ -28,10 +29,10 @@ declare module namespace {
         ingredients: string;
         price: any;
         image: string;
-        isSignatueDish: boolean;
         isSpicy: boolean;
-        isVegan: any;
-        isVegitarian: any;
+        isVegan: boolean;
+        isVegitarian: boolean;
+        id: number;
     }
 
     export interface RootObject {

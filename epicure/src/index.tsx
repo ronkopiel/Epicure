@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "./fonts/HelveticaNeue-Medium.ttf";
+import "./fonts/HelveticaNeue-Light.ttf";
+import "./fonts/HelveticaNeue-Thin.ttf";
+import "./fonts/Helvetica-Neu-Bold.ttf";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

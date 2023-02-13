@@ -1,14 +1,30 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue"),
+    url("./fonts/HelveticaNeue-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Helvetica Neue thin";
+  src: local("Helvetica Neue"),
+    url("./fonts/HelveticaNeue-Thin.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 80px;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  font-family: "Helvetica Neue", sans-serif;
-  font-family: "Helvetica 25 UltraLight", sans-serif;
-  font-family: "Helvetica 35 Thin", sans-serif;
-  font-family: "Helvetica 45 Light", sans-serif;
-  font-family: "Helvetica 55 Roman", sans-serif;
-  font-family: "Helvetica 65 Medium", sans-serif;
+  font-family: "Helvetica Neue thin", sans-serif;
   font-style: normal;
   font-weight: 200;
   font-size: 24px;
@@ -24,55 +40,50 @@ button {
   display: flex;
   flex-direction: row-reverse;
   background: 0;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue thin";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 20px;
-  /* identical to box height, or 111% */
   text-align: center;
   letter-spacing: 2.67px;
   text-transform: uppercase;
   color: #ffffff;
 }
 input {
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue thin";
   font-style: normal;
   font-weight: 200;
   font-size: 16px;
   line-height: 18px;
-  /* identical to box height, or 112% */
   letter-spacing: 1.97px;
 }
 h1 {
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue thin";
   font-style: normal;
   font-weight: 200;
   font-size: 24px;
   line-height: 32px;
-  /* or 133% */
-
   letter-spacing: 1.97px;
-
   color: #000000;
 }
 h2 {
-  font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 200;
-font-size: 30px;
-line-height: 35px;
-text-align: center;
-letter-spacing: 1.25px;
-text-transform: uppercase;
+  font-family: "Helvetica Neue thin";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
 }
 h3 {
-  font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 47px;
-letter-spacing: 2.67px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 2.67px;
 }
 .nav-bar {
   display: flex;
@@ -85,7 +96,7 @@ letter-spacing: 2.67px;
 }
 .nav-bar-content {
   display: flex;
-  align-items: end;
+  align-items: center;
   gap: 32px;
   max-width: 1186px;
   width: 100%;
@@ -99,16 +110,10 @@ letter-spacing: 2.67px;
 .search-button {
   background-image: url(../public/assets/Search.svg);
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 .content {
   width: 410px;
   position: relative;
 }
-
 .search {
   --size: 41px;
   display: flex;
@@ -126,7 +131,6 @@ letter-spacing: 2.67px;
   align-items: center;
   justify-content: center;
 }
-
 #search-bar {
   border: 0;
   padding: 0.25em 1em;
@@ -142,7 +146,6 @@ letter-spacing: 2.67px;
   opacity: 0;
   cursor: pointer;
 }
-
 .search-button {
   font-size: 1.5rem;
   margin-left: auto;
@@ -174,9 +177,8 @@ letter-spacing: 2.67px;
 .nav-bar-icons {
   align-self: center;
 }
-
 .links {
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue thin";
   font-style: normal;
   font-weight: 200;
   font-size: 18px;
@@ -193,10 +195,8 @@ letter-spacing: 2.67px;
   align-items: center;
   padding: 36px 126px;
   gap: 18px;
-
   width: 776px;
   height: 221px;
-
   background: rgba(255, 255, 255, 0.88);
 }
 .hero-container {
@@ -204,8 +204,7 @@ letter-spacing: 2.67px;
   align-items: center;
   justify-content: center;
   height: 696px;
-  left: 0px;
-  top: 64px;
+  width: 100%;
   background: url(../public/assets/hero-picture@2x.png);
 }
 .hero-desc {
@@ -214,62 +213,144 @@ letter-spacing: 2.67px;
 }
 .hero-search {
   display: flex;
-flex-direction: row;
-align-items: center;
-padding: 6px 12px;
-gap: 16px;
-
-width: 505px;
-height: 48px;
-
-border: 0.5px solid #000000;
-border-radius: 4px;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 16px;
+  width: 505px;
+  height: 48px;
+  border: 0.5px solid #000000;
+  border-radius: 4px;
 }
 #search-hero {
   display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-width: 433px;
-height: 38px;
-font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 200;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-letter-spacing: 1.29px;
-outline: 0;
-background: transparent;
-cursor: pointer;
-border: 0;
-
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  width: 433px;
+  height: 38px;
+  font-family: "Helvetica Neue thin";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 1.29px;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+  border: 0;
 }
 .search-button-logo-bigger {
   width: 32px;
-  height: 32px; 
+  height: 32px;
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  max-width: calc((380+24)*3px);
-  grid-template-rows: 404.89px;
+  max-width: calc((380+24) * 3px);
   gap: 24px;
   justify-items: center;
-
 }
 .resaturant-card-img {
   width: 100%;
   height: 236px;
   object-fit: cover;
-
+  margin-bottom: 18px;
 }
 .resaturant-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  background: #f9f4ea;
+  gap: 8px;
 }
 .popular-restaurants-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  width: fit-content;
+  gap: 40px;
+}
+.star-rating {
+  display: flex;
+  justify-content: center;
+}
+.on {
+  background-image: url(./assets/Star\ 1.svg);
+}
+.off {
+  background-image: url(./assets/Star\ 2.svg);
+}
+.star {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+}
+.restaurant-link {
+  align-self: flex-end;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: right;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: #000000;
+}
+.dish-card-img {
+  width: 100%;
+  height: 306px;
+  object-fit: cover;
+}
+.dish-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  width: 100%;
+  background: #F9F4EA;
+}
+.dish-icon {
+  width: 40px;
+  height: 31px;
+}
+.dish-icons {
+  display: flex;
+}
+.ingridients {
+  width: 295px
+}
+.dish-name {
+  width: 194px;
+}
+.line {
+  border: 0.5px solid #979797;
+  width: 112px;
+  height: 0px;
+}
+.dish-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0px 8px;
+  gap: 8px;
+  width: 295px;
+  height: 348px;
+  text-align: center;
+}
+.price {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+}
+.hidden {
+  display: none;
 }

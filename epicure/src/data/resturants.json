@@ -33,12 +33,13 @@
       {
         "id": 0,
         "name": "Claro",
-        "img": "./assets/claro@3x.png",
+        "img": "./assets/claro.png",
         "hours": "",
         "address": "",
         "rating": 4,
         "chefID": 0,
-        "viewCount": 267
+        "viewCount": 267,
+        "signatureDishID":0
       },
       {
         "id": 1,
@@ -48,7 +49,8 @@
         "address": "",
         "rating": 3,
         "chefID": 1,
-        "viewCount": 154
+        "viewCount": 154,
+        "signatureDishID":1
       },
       {
         "id": 2,
@@ -58,7 +60,8 @@
         "address": "",
         "rating": 4,
         "chefID": 2,
-        "viewCount": 24
+        "viewCount": 24,
+        "signatureDishID":2
       }
     ],
     "dishes": [
@@ -66,12 +69,12 @@
         "resturantID": 0,
         "name": "Pad Ki Mao",
         "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
-        "price": "",
+        "price": 0,
         "image": "./assets/rectangle_2@3x.png",
-        "isSignatueDish": true,
         "isSpicy": true,
-        "isVegan": "",
-        "isVegitarian": ""
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 0
       },
       {
         "resturantID": 1,
@@ -79,21 +82,21 @@
         "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
         "price": 98,
         "image": "./assets/garbanzoDesktop.png",
-        "isSignatueDish": true,
         "isSpicy": false,
         "isVegan": false,
-        "isVegitarian": false
+        "isVegitarian": false,
+        "id": 1
       },
       {
         "resturantID": 2,
         "name": "Smoked Pizza",
         "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
-        "price": "",
+        "price": 0,
         "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
-        "isSignatueDish": true,
         "isSpicy": false,
         "isVegan": true,
-        "isVegitarian": false
+        "isVegitarian": false,
+        "id": 2
       }
     ]
   }
