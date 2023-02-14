@@ -5,6 +5,7 @@ import RestaurantCard from "../../components/RestaurantCard";
 import datas from "../../data/resturants.json";
 import DishCard from "../../components/DishCard";
 import WeekChef from "./WeekChef";
+import Footer from "../../components/Footer";
 const data = datas[0];
 const popularRestaurants = data.restaurants
   .sort((a, b) => b.viewCount - a.viewCount)
@@ -122,23 +123,24 @@ const Home: React.FC = () => {
               porta malesuada eros.
             </p>
             <div className="app-downloads">
-              <div className="store-link">
+              <button className="store-link">
                 <img src="/assets/apple.svg" alt="" />
                 <div className="text-flex">
                   <div className="app-text">Download on the</div>
                   <div className="app-name">App Store</div>
                 </div>
-              </div>
-              <div className="store-link">
+              </button>
+              <button className="store-link">
                 <img src="/assets/playstore.svg" alt="" />
                 <div className="text-flex">
                   <div className="app-text">Get it on</div>
                   <div className="app-name">Google Play</div>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
           <img src="/assets/about-logo@3x 2.svg" alt=""  className="site-logo"/>
+          <Footer />
         </div>
       </div>
     </>
