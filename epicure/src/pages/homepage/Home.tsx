@@ -64,6 +64,24 @@ const Home: React.FC = () => {
               )
             })}
         </div>
+        <div className="icon-description-container">
+            <h2>the meaning of our icons:</h2>
+          <div className="icons-description">
+            <div className="icon-description">
+              <img src="/assets/spicyBig.svg" alt="" className="big-icon"/>
+              <span>Spicy</span>
+            </div>
+            <div className="icon-description">
+            <img src="/assets/vegitarianBig.svg" alt="" className="big-icon"/>
+              <span>Spicy</span>
+            </div>
+            <div className="icon-description">
+            <img src="/assets/VeganBig.svg" alt="" className="big-icon"/>
+              <span>Vegan</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </>
   );

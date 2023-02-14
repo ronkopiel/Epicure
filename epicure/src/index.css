@@ -14,10 +14,10 @@
   box-sizing: border-box;
 }
 .container {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
 }
 body {
   margin: 0;
@@ -313,7 +313,7 @@ h3 {
   justify-content: center;
   padding: 0px;
   width: 100%;
-  background: #F9F4EA;
+  background: #f9f4ea;
 }
 .dish-icon {
   width: 40px;
@@ -323,7 +323,7 @@ h3 {
   display: flex;
 }
 .ingridients {
-  width: 295px
+  width: 295px;
 }
 .dish-name {
   width: 194px;
@@ -353,4 +353,34 @@ h3 {
 }
 .hidden {
   display: none;
+}
+.icon-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 39px 476px;
+  gap: 32px;
+  height: 265px;
+  width: 100%;
+  background: #fafafa;
+}
+
+.icons-description {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 40px;
+}
+.icon-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+}
+.big-icon {
+  width: 77.42px;
+  height: 60px;
 }
