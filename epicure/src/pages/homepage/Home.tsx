@@ -38,7 +38,11 @@ const Home: React.FC = () => {
                   rating={resaturant.rating}
                   chefID={resaturant.chefID}
                   viewCount={resaturant.viewCount}
-                  chefName={data.chefs[resaturant.chefID].firstName+" "+data.chefs[resaturant.chefID].lastName}
+                  chefName={
+                    data.chefs[resaturant.chefID].firstName +
+                    " " +
+                    data.chefs[resaturant.chefID].lastName
+                  }
                   signatureDishID={resaturant.signatureDishID}
                   key={index}
                 />
@@ -89,22 +93,53 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-          {chefOfTheWeek.map((chef, index) => {
-            return (
-              <WeekChef
-                firstName={chef.firstName}
-                lastName={chef.lastName}
-                portrait={chef.portrait}
-                isChefOfTheWeek={chef.isChefOfTheWeek}
-                isNew={chef.isNew}
-                viewCount={chef.viewCount}
-                resturants={chef.resturants}
-                id={chef.id}
-                chefDescription={chef.chefDescription}
-                key={index}
-              />
-            );
-          })}
+        {chefOfTheWeek.map((chef, index) => {
+          return (
+            <WeekChef
+              firstName={chef.firstName}
+              lastName={chef.lastName}
+              portrait={chef.portrait}
+              isChefOfTheWeek={chef.isChefOfTheWeek}
+              isNew={chef.isNew}
+              viewCount={chef.viewCount}
+              resturants={chef.resturants}
+              id={chef.id}
+              chefDescription={chef.chefDescription}
+              key={index}
+            />
+          );
+        })}
+        <div className="bottom-container-homepage">
+          <div className="about">
+            <h2>about us:</h2>
+            <p className="about-paragraph">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+              lacus vel justo fermentum bibendum non eu ipsum. Cras porta
+              malesuada eros, eget blandit turpis suscipit at. Vestibulum sed
+              massa in magna sodales porta. Vivamus elit urna, dignissim a
+              vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. In a lacus vel justo fermentum bibendum no eu ipsum. Cras
+              porta malesuada eros.
+            </p>
+            <div className="app-downloads">
+              <div className="store-link">
+                <img src="/assets/apple.svg" alt="" />
+                <div className="text-flex">
+                  <div className="app-text">Download on the</div>
+                  <div className="app-name">App Store</div>
+                </div>
+              </div>
+              <div className="store-link">
+                <img src="/assets/playstore.svg" alt="" />
+                <div className="text-flex">
+                  <div className="app-text">Get it on</div>
+                  <div className="app-name">Google Play</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="/assets/about-logo@3x 2.svg" alt=""  className="site-logo"/>
+        </div>
       </div>
     </>
   );
