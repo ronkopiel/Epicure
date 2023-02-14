@@ -8,6 +8,7 @@ declare module namespace {
         viewCount: string;
         resturants: number[];
         id: number;
+        chefDescription: string
     }
 
     export interface Restaurant {

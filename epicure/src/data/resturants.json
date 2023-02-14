@@ -6,27 +6,41 @@
         "portrait": "",
         "isChefOfTheWeek": false,
         "isNew": false,
-        "viewCount": "",
+        "viewCount": 0,
         "resturants": [0],
-        "id":0
+        "id":0,
+        "chefDescription": ""
       },
       {
         "name": "Meir Adoni",
         "portrait": "",
         "isChefOfTheWeek": false,
         "isNew": false,
-        "viewCount": "",
+        "viewCount": 0,
         "resturants": [1],
-        "id":1
+        "id":1,
+        "chefDescription": ""
       },
       {
         "name": "Yanir Green",
         "portrait": "",
         "isChefOfTheWeek": false,
         "isNew": false,
-        "viewCount": "",
+        "viewCount": 0,
         "resturants": [2],
-        "id":2
+        "id":2,
+        "chefDescription": ""
+      },
+      {
+        "name": "Yossi Shitrit",
+        "portrait": "./assets/rectangle.png",
+        "isChefOfTheWeek": true,
+        "isNew": false,
+        "viewCount": 0,
+        "resturants": [3,4,5],
+        "id":3,
+        "chefDescription": "Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav  Udim. Shitrit's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish."
+        
       }
     ],
     "restaurants": [
@@ -62,6 +76,39 @@
         "chefID": 2,
         "viewCount": 24,
         "signatureDishID":2
+      },
+     {
+        "id": 3,
+        "name": "onza",
+        "img": "./assets/screen-shot-2019-01-06-at-10-55-45@2x.png",
+        "hours": "",
+        "address": "",
+        "rating": 3,
+        "chefID": 31,
+        "viewCount": 0,
+        "signatureDishID":3
+      }, 
+      {
+        "id": 4,
+        "name": "Kitchen Market",
+        "img": "./assets/screen-shot-2019-01-06-at-10-57-26@2x.png",
+        "hours": "",
+        "address": "",
+        "rating": 3,
+        "chefID": 3,
+        "viewCount": 0,
+        "signatureDishID":4
+      },
+      {
+        "id": 5,
+        "name": "Mashya",
+        "img": "./assets/mashya.png",
+        "hours": "",
+        "address": "",
+        "rating": 3,
+        "chefID": 3,
+        "viewCount": 0,
+        "signatureDishID":5
       }
     ],
     "dishes": [
