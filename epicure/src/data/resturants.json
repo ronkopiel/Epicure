@@ -2,7 +2,8 @@
   {
     "chefs": [
       {
-        "name": "Ran Shmueli",
+        "firstName": "Ran",
+        "lastName": "Shmueli",
         "portrait": "",
         "isChefOfTheWeek": false,
         "isNew": false,
@@ -12,7 +13,8 @@
         "chefDescription": ""
       },
       {
-        "name": "Meir Adoni",
+        "firstName": "Meir",
+        "lastName": "Adoni",
         "portrait": "",
         "isChefOfTheWeek": false,
         "isNew": false,
@@ -22,7 +24,8 @@
         "chefDescription": ""
       },
       {
-        "name": "Yanir Green",
+        "firstName": "Yanir",
+        "lastName": "Green",
         "portrait": "",
         "isChefOfTheWeek": false,
         "isNew": false,
@@ -32,8 +35,9 @@
         "chefDescription": ""
       },
       {
-        "name": "Yossi Shitrit",
-        "portrait": "./assets/rectangle.png",
+        "firstName": "Yossi",
+        "lastName": "Shitrit",
+        "portrait": "./assets/yossishitrit.png",
         "isChefOfTheWeek": true,
         "isNew": false,
         "viewCount": 0,
@@ -84,7 +88,7 @@
         "hours": "",
         "address": "",
         "rating": 3,
-        "chefID": 31,
+        "chefID": 3,
         "viewCount": 0,
         "signatureDishID":3
       }, 

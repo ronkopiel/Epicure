@@ -1,11 +1,12 @@
 declare module namespace {
 
     export interface Chef {
-        name: string;
+        firstName: string;
+        lastName: string;
         portrait: string;
         isChefOfTheWeek: boolean;
         isNew: boolean;
-        viewCount: string;
+        viewCount: number;
         resturants: number[];
         id: number;
         chefDescription: string
