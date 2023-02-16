@@ -1,10 +1,10 @@
 import React from "react";
-import dataInterface from "./../data/interface";
+import {Dish} from "./../data/interface";
 import Spicy from "./Spicy";
 import Vegan from "./Vegan";
 import Vegitarian from "./Vegitarian";
 
-const DishCard: React.FC<dataInterface.Dish> = (props) => {
+const DishCard: React.FC<Dish> = (props) => {
   return (
     <>
       <div className="dish-card">

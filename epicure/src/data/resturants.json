@@ -52,67 +52,79 @@
         "id": 0,
         "name": "Claro",
         "img": "./assets/claro.png",
-        "hours": "",
+        "openingHour": 8,
+        "closingHour": 18,
         "address": "",
         "rating": 4,
         "chefID": 0,
         "viewCount": 267,
-        "signatureDishID":0
+        "signatureDishID":0,
+        "isNew": false
       },
       {
         "id": 1,
         "name": "Lumina",
         "img": "./assets/mizlala-gret-mullet-fillet-desktop@2x.png",
-        "hours": "",
+        "openingHour": 8,
+        "closingHour": 13,
         "address": "",
         "rating": 3,
         "chefID": 1,
         "viewCount": 154,
-        "signatureDishID":1
+        "signatureDishID":1,
+        "isNew": false
       },
       {
         "id": 2,
         "name": "Tiger Lilly",
         "img": "./assets/tiger-lili.png",
-        "hours": "",
+        "openingHour": 12,
+        "closingHour": 16,
         "address": "",
         "rating": 4,
         "chefID": 2,
         "viewCount": 24,
-        "signatureDishID":2
+        "signatureDishID":2,
+        "isNew": true
       },
      {
         "id": 3,
         "name": "onza",
         "img": "./assets/screen-shot-2019-01-06-at-10-55-45@2x.png",
-        "hours": "",
+        "openingHour": 8,
+        "closingHour": 20,
         "address": "",
         "rating": 3,
         "chefID": 3,
         "viewCount": 0,
-        "signatureDishID":3
+        "signatureDishID":3,
+        "isNew": false
       }, 
       {
         "id": 4,
         "name": "Kitchen Market",
         "img": "./assets/screen-shot-2019-01-06-at-10-57-26@2x.png",
-        "hours": "",
+        "openingHour": 12,
+        "closingHour": 24,
         "address": "",
         "rating": 3,
         "chefID": 3,
         "viewCount": 0,
-        "signatureDishID":4
+        "signatureDishID":4,
+        "isNew": true
       },
       {
         "id": 5,
         "name": "Mashya",
         "img": "./assets/mashya.png",
-        "hours": "",
+        "openingHour": 10,
+        "closingHour": 23,
         "address": "",
         "rating": 3,
         "chefID": 3,
         "viewCount": 0,
-        "signatureDishID":5
+        "signatureDishID":5,
+        "isNew": true
       }
     ],
     "dishes": [

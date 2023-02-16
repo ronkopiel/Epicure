@@ -2,24 +2,33 @@ import React from "react";
 import NavBar from "../../components/NavBar";
 import Hero from "./Hero";
 import RestaurantCard from "../../components/RestaurantCard";
-import datas from "../../data/resturants.json";
 import DishCard from "../../components/DishCard";
 import WeekChef from "./WeekChef";
 import Footer from "../../components/Footer";
-const data = datas[0];
-const popularRestaurants = data.restaurants
-  .sort((a, b) => b.viewCount - a.viewCount)
-  .slice(0, 3);
-const signatureDishes = data.dishes.filter((dish) => {
-  popularRestaurants.map((resaturant) => {
-    if (resaturant.signatureDishID == dish.id) {
-      return dish;
-    }
-  });
-  return dish;
-});
-const chefOfTheWeek = data.chefs.filter((chef) => chef.isChefOfTheWeek);
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store";
+import {
+  sortPopularity,
+} from "../../features/restaurantsSlicer";
+
 const Home: React.FC = () => {
+  const dispatch = useDispatch();
+  const chefs = useSelector((state: RootState) => state.chefs.value);
+  const restaurants = useSelector(
+    (state: RootState) => state.restaurants.changedValue
+  );
+  const dishes = useSelector((state: RootState) => state.dishes.value);
+  dispatch(sortPopularity());
+  const popularRestaurants = restaurants.slice(0, 3);
+  const signatureDishes = dishes.filter((dish) => {
+    popularRestaurants.map((resaturant) => {
+      if (resaturant.signatureDishID == dish.id) {
+        return dish;
+      }
+    });
+    return dish;
+  });
+  const chefOfTheWeek = chefs.filter((chef) => chef.isChefOfTheWeek);
   return (
     <>
       <NavBar />
@@ -34,17 +43,19 @@ const Home: React.FC = () => {
                   id={resaturant.id}
                   name={resaturant.name}
                   img={resaturant.img}
-                  hours={resaturant.hours}
+                  openingHour={resaturant.openingHour}
+                  closingHour={resaturant.closingHour}
                   address={resaturant.address}
                   rating={resaturant.rating}
                   chefID={resaturant.chefID}
                   viewCount={resaturant.viewCount}
                   chefName={
-                    data.chefs[resaturant.chefID].firstName +
+                    chefs[resaturant.chefID].firstName +
                     " " +
-                    data.chefs[resaturant.chefID].lastName
+                    chefs[resaturant.chefID].lastName
                   }
                   signatureDishID={resaturant.signatureDishID}
+                  isNew={resaturant.isNew}
                   key={index}
                 />
               );
@@ -139,7 +150,7 @@ const Home: React.FC = () => {
               </button>
             </div>
           </div>
-          <img src="/assets/about-logo@3x 2.svg" alt=""  className="site-logo"/>
+          <img src="/assets/about-logo@3x 2.svg" alt="" className="site-logo" />
           <Footer />
         </div>
       </div>

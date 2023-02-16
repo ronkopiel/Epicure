@@ -1,4 +1,3 @@
-declare module namespace {
 
     export interface Chef {
         firstName: string;
@@ -16,13 +15,15 @@ declare module namespace {
         id: number;
         name: string;
         img: string;
-        hours: string;
+        openingHour: number;
+        closingHour: number;
         address: string;
         rating: number;
         chefID: number;
         viewCount: number;
         chefName: string;
         signatureDishID:number;
+        isNew: boolean;
     }
 
     export interface Dish {
@@ -36,12 +37,18 @@ declare module namespace {
         isVegitarian: boolean;
         id: number;
     }
-
-    export interface RootObject {
-        chefs: Chef[];
-        restaurants: Restaurant[];
-        dishes: Dish[];
+    export interface chefsState {
+        value: Chef[]
     }
-
-}
-export default namespace
+    export interface restaurantState {
+        value: Restaurant[]
+        changedValue: Restaurant[]
+      }
+    export interface dishesState {
+        value: Dish[]
+    }
+    export interface RootObject {
+        chefs: chefsState;
+        restaurants: restaurantState;
+        dishes: dishesState;
+    }
