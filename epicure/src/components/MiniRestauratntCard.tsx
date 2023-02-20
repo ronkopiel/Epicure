@@ -1,9 +1,9 @@
 import React from "react"
-import dataInterface from "./../data/interface";
+import {IRestaurant} from "./../data/interface";
 
 
 
-const MiniRestaurantCard:React.FC<dataInterface.Restaurant> = (resaturant) => {
+const MiniRestaurantCard:React.FC<IRestaurant> = (resaturant) => {
   return (
     <>
     <div className="mini-resaturant-card">

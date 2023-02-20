@@ -1,16 +1,19 @@
-import { text } from "body-parser";
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import ChefCard from "../../components/ChefCard";
 import MiniRestaurantCard from "../../components/MiniRestauratntCard";
-import dataInterface from "../../data/interface";
-import datas from "../../data/resturants.json";
-const data = datas[0];
+import { IChef, IRestaurant, IRestaurantState } from "../../data/interface";
+import { RootState } from "../../store";
 
-const WeekChef: React.FC<dataInterface.Chef> = (chef) => {
-  const chefsRestaurants = data.restaurants.filter(
-    (resaturant) => resaturant.chefID == chef.id
+const WeekChef  = (chef:IChef) => {
+   const restaurants:IRestaurantState["changedValue"] = useSelector(
+    (state: RootState) => state.restaurants.changedValue
   );
-  console.log(chefsRestaurants)
+
+
+  const chefsRestaurants = restaurants.filter(
+    (resaturant:IRestaurant) => resaturant.chefID == chef.id
+  );
   return (
     <>
       <div className="weeks-chef-container">
@@ -31,23 +34,25 @@ const WeekChef: React.FC<dataInterface.Chef> = (chef) => {
         </div>
         <h2 className="week-chef-text">{chef.firstName}'s Restaurants</h2>
         <div className="chefs-restaurants">
-        {chefsRestaurants.map((resaturant, index) => {
-              return (
-                <MiniRestaurantCard
-                  id={resaturant.id}
-                  name={resaturant.name}
-                  img={resaturant.img}
-                  hours={resaturant.hours}
-                  address={resaturant.address}
-                  rating={resaturant.rating}
-                  chefID={resaturant.chefID}
-                  viewCount={resaturant.viewCount}
-                  chefName={chef.firstName+" "+chef.lastName}
-                  signatureDishID={resaturant.signatureDishID}
-                  key={index}
-                />
-              );
-            })}
+          {chefsRestaurants.map((resaturant:IRestaurant, index:number) => {
+            return (
+              <MiniRestaurantCard
+                id={resaturant.id}
+                name={resaturant.name}
+                img={resaturant.img}
+                openingHour={resaturant.openingHour}
+                closingHour={resaturant.closingHour}
+                address={resaturant.address}
+                rating={resaturant.rating}
+                chefID={resaturant.chefID}
+                viewCount={resaturant.viewCount}
+                chefName={chef.firstName + " " + chef.lastName}
+                signatureDishID={resaturant.signatureDishID}
+                isNew={resaturant.isNew}
+                key={index}
+              />
+            );
+          })}
         </div>
       </div>
     </>
