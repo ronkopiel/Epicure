@@ -1,26 +1,26 @@
 import React from "react";
-import {Dish} from "./../data/interface";
+import {IDish} from "./../data/interface";
 import Spicy from "./Spicy";
 import Vegan from "./Vegan";
 import Vegitarian from "./Vegitarian";
 
-const DishCard: React.FC<Dish> = (props) => {
+const DishCard: React.FC<IDish> = (dish) => {
   return (
     <>
       <div className="dish-card">
-        <img src={props.image} alt="" className="dish-card-img" />
+        <img src={dish.image} alt="" className="dish-card-img" />
         <div className="dish-info">
-          <h3 className="dish-name">{props.name}</h3>
+          <h3 className="dish-name">{dish.name}</h3>
           <div className="dish-icons">
-            <Vegan isVegan={props.isVegan} />
-            <Spicy isSpicy={props.isSpicy} />
-            <Vegitarian isVegitarian={props.isVegitarian} />
+            <Vegan isVegan={dish.isVegan} />
+            <Spicy isSpicy={dish.isSpicy} />
+            <Vegitarian isVegitarian={dish.isVegitarian} />
           </div>
-          <span className="ingridients">{props.ingredients}</span>
-          <div className={props.isSpicy||props.isVegan||props.isVegitarian ? "hidden" : "price"} >
+          <span className="ingridients">{dish.ingredients}</span>
+          <div className={dish.isSpicy||dish.isVegan||dish.isVegitarian ? "hidden" : "price"} >
             <div className="line"></div>
             <img src="/assets/ils 1.svg" alt="" />
-            {props.price}
+            {dish.price}
             <div className="line"></div>
           </div>
         </div>

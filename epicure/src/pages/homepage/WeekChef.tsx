@@ -2,17 +2,17 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import ChefCard from "../../components/ChefCard";
 import MiniRestaurantCard from "../../components/MiniRestauratntCard";
-import { Chef, Restaurant, restaurantState } from "../../data/interface";
+import { IChef, IRestaurant, IRestaurantState } from "../../data/interface";
 import { RootState } from "../../store";
 
-const WeekChef: React.FC<Chef> = (chef) => {
-   const restaurants = useSelector(
+const WeekChef  = (chef:IChef) => {
+   const restaurants:IRestaurantState["changedValue"] = useSelector(
     (state: RootState) => state.restaurants.changedValue
   );
 
 
   const chefsRestaurants = restaurants.filter(
-    (resaturant) => resaturant.chefID == chef.id
+    (resaturant:IRestaurant) => resaturant.chefID == chef.id
   );
   return (
     <>
@@ -34,7 +34,7 @@ const WeekChef: React.FC<Chef> = (chef) => {
         </div>
         <h2 className="week-chef-text">{chef.firstName}'s Restaurants</h2>
         <div className="chefs-restaurants">
-          {chefsRestaurants.map((resaturant, index) => {
+          {chefsRestaurants.map((resaturant:IRestaurant, index:number) => {
             return (
               <MiniRestaurantCard
                 id={resaturant.id}

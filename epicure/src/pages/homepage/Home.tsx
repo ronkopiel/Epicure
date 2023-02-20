@@ -7,28 +7,38 @@ import WeekChef from "./WeekChef";
 import Footer from "../../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { sortPopularity } from "../../features/restaurantsSlicer";
 import {
-  sortPopularity,
-} from "../../features/restaurantsSlicer";
+  IChef,
+  IRestaurant,
+  IDish,
+  IRestaurantState,
+  IChefsState,
+  IDishesState,
+} from "../../data/interface";
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
-  const chefs = useSelector((state: RootState) => state.chefs.value);
-  const restaurants = useSelector(
+  const chefs: IChefsState["value"] = useSelector(
+    (state: RootState) => state.chefs.value
+  );
+  const restaurants: IRestaurantState["value"] = useSelector(
     (state: RootState) => state.restaurants.changedValue
   );
-  const dishes = useSelector((state: RootState) => state.dishes.value);
+  const dishes: IDishesState["value"] = useSelector(
+    (state: RootState) => state.dishes.value
+  );
   dispatch(sortPopularity());
   const popularRestaurants = restaurants.slice(0, 3);
-  const signatureDishes = dishes.filter((dish) => {
-    popularRestaurants.map((resaturant) => {
+  const signatureDishes = dishes.filter((dish: IDish) => {
+    popularRestaurants.map((resaturant: IRestaurant) => {
       if (resaturant.signatureDishID == dish.id) {
         return dish;
       }
     });
     return dish;
   });
-  const chefOfTheWeek = chefs.filter((chef) => chef.isChefOfTheWeek);
+  const chefOfTheWeek = chefs.filter((chef: IChef) => chef.isChefOfTheWeek);
   return (
     <>
       <NavBar />
@@ -37,29 +47,31 @@ const Home: React.FC = () => {
         <div className="popular-restaurants-container">
           <h2>popular restaurant in epicure:</h2>
           <div className="grid">
-            {popularRestaurants.map((resaturant, index) => {
-              return (
-                <RestaurantCard
-                  id={resaturant.id}
-                  name={resaturant.name}
-                  img={resaturant.img}
-                  openingHour={resaturant.openingHour}
-                  closingHour={resaturant.closingHour}
-                  address={resaturant.address}
-                  rating={resaturant.rating}
-                  chefID={resaturant.chefID}
-                  viewCount={resaturant.viewCount}
-                  chefName={
-                    chefs[resaturant.chefID].firstName +
-                    " " +
-                    chefs[resaturant.chefID].lastName
-                  }
-                  signatureDishID={resaturant.signatureDishID}
-                  isNew={resaturant.isNew}
-                  key={index}
-                />
-              );
-            })}
+            {popularRestaurants.map(
+              (resaturant: IRestaurant, index: number) => {
+                return (
+                  <RestaurantCard
+                    id={resaturant.id}
+                    name={resaturant.name}
+                    img={resaturant.img}
+                    openingHour={resaturant.openingHour}
+                    closingHour={resaturant.closingHour}
+                    address={resaturant.address}
+                    rating={resaturant.rating}
+                    chefID={resaturant.chefID}
+                    viewCount={resaturant.viewCount}
+                    chefName={
+                      chefs[resaturant.chefID].firstName +
+                      " " +
+                      chefs[resaturant.chefID].lastName
+                    }
+                    signatureDishID={resaturant.signatureDishID}
+                    isNew={resaturant.isNew}
+                    key={index}
+                  />
+                );
+              }
+            )}
           </div>
           <a href="/restaurants" className="restaurant-link">
             All Restaurants <img src="/assets/Vector.svg" alt="" />
@@ -67,7 +79,7 @@ const Home: React.FC = () => {
         </div>
         <h2>SIGNATURE DISH OF:</h2>
         <div className="grid">
-          {signatureDishes.map((dish, index) => {
+          {signatureDishes.map((dish: IDish, index: number) => {
             return (
               <DishCard
                 id={dish.id}
@@ -105,7 +117,7 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-        {chefOfTheWeek.map((chef, index) => {
+        {chefOfTheWeek.map((chef: IChef, index: number) => {
           return (
             <WeekChef
               firstName={chef.firstName}

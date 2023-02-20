@@ -1,10 +1,10 @@
 import React from "react"
-import {Chef} from "../data/interface";
+import {IChef} from "../data/interface";
 
 
 
 
-const ChefCard:React.FC<Chef> = (chef) => {
+const ChefCard:React.FC<IChef> = (chef) => {
   return (
     <div className="chef-card">
         <img src={chef.portrait} alt="" className="chef-portrait"/>

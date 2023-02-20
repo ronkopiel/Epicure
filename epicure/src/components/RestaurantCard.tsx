@@ -1,9 +1,9 @@
 import React from "react"
-import {Restaurant} from "./../data/interface";
+import {IRestaurant} from "./../data/interface";
 import Rating from "./Rating";
 
 
-const RestaurantCard:React.FC<Restaurant> = (resaturant) => {
+const RestaurantCard:React.FC<IRestaurant> = (resaturant) => {
   return (
     <>
     <div className="resaturant-card">

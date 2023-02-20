@@ -1,5 +1,5 @@
 
-    export interface Chef {
+    export interface IChef {
         firstName: string;
         lastName: string;
         portrait: string;
@@ -11,7 +11,7 @@
         chefDescription: string
     }
 
-    export interface Restaurant {
+    export interface IRestaurant {
         id: number;
         name: string;
         img: string;
@@ -26,7 +26,7 @@
         isNew: boolean;
     }
 
-    export interface Dish {
+    export interface IDish {
         resturantID: number;
         name: string;
         ingredients: string;
@@ -37,18 +37,18 @@
         isVegitarian: boolean;
         id: number;
     }
-    export interface chefsState {
-        value: Chef[]
+    export interface IChefsState {
+        value: IChef[]
     }
-    export interface restaurantState {
-        value: Restaurant[]
-        changedValue: Restaurant[]
+    export interface IRestaurantState {
+        value: IRestaurant[]
+        changedValue: IRestaurant[]
       }
-    export interface dishesState {
-        value: Dish[]
+    export interface IDishesState {
+        value: IDish[]
     }
-    export interface RootObject {
-        chefs: chefsState;
-        restaurants: restaurantState;
-        dishes: dishesState;
+    export interface IRootObject {
+        chefs: IChefsState;
+        restaurants: IRestaurantState;
+        dishes: IDishesState;
     }
