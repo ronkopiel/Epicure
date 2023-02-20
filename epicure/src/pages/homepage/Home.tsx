@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../../components/NavBar";
 import Hero from "./Hero";
 import RestaurantCard from "../../components/RestaurantCard";
@@ -6,7 +6,7 @@ import DishCard from "../../components/DishCard";
 import WeekChef from "./WeekChef";
 import Footer from "../../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { IRootState } from "../../store";
 import {
   getNewRestaurants,
   getOpenRestaurants,
@@ -24,14 +24,17 @@ import {
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(sortPopularity());
+  }, []);
   const chefs: IChefsState["value"] = useSelector(
-    (state: RootState) => state.chefs.value
+    (state: IRootState) => state.chefs.value
   );
   const restaurants: IRestaurantState["value"] = useSelector(
-    (state: RootState) => state.restaurants.changedValue
+    (state: IRootState) => state.restaurants.changedValue
   );
   const dishes: IDishesState["value"] = useSelector(
-    (state: RootState) => state.dishes.value
+    (state: IRootState) => state.dishes.value
   );
   const popularRestaurants = restaurants.slice(0, 3);
   const signatureDishes = dishes.filter((dish: IDish) => {

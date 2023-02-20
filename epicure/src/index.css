@@ -103,7 +103,11 @@ h3 {
   width: 100vw;
   height: 64px;
   flex-direction: column;
-  gap: 11.5px;
+}
+.divider {
+  width: 100%;
+  height: 0px;
+  border: 0.2px solid #97979790;
 }
 .nav-bar-content {
   display: flex;
@@ -565,4 +569,69 @@ h3 {
   letter-spacing: 1.92px;
   color: #000000;
   text-decoration: none;
+}
+.restaurant-filter {
+  font-family: "Helvetica Neue thin";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 1.92px;
+  color: #000000;
+  text-transform: none;
+}
+.restaurant-filters {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 40px;
+}
+.restaurant-filters-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  background: #ffffff;
+}
+.restaurants-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 40px;
+  margin-top: 48px;
+}
+.popup-filters-container {
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  gap: 47px;
+}
+.popup-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+}
+.popup-filter-content {
+  font-family: "Helvetica Neue thin";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 1.92px;
+  color: #000000;
+  text-transform: none;
+}
+.dropdown {
+  width: 24px;
+  height: 24px;
 }

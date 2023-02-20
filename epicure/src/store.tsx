@@ -5,7 +5,7 @@ import dishesReducer from "./features/dishesSlicer"
 import {IRootObject} from "./data/interface"
 
 
-export interface RootState {
+export interface IRootState {
     chefs: IRootObject['chefs']
     restaurants: IRootObject['restaurants']
     dishes: IRootObject['dishes']

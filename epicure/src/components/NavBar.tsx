@@ -17,6 +17,8 @@ const NavBar: React.FC = () => {
         <Login />
         <Cart />
       </div>
+      <div className="divider">
+      </div>
     </div>
     </>
   );

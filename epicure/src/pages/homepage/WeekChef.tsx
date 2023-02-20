@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import ChefCard from "../../components/ChefCard";
 import MiniRestaurantCard from "../../components/MiniRestauratntCard";
 import { IChef, IRestaurant, IRestaurantState } from "../../data/interface";
-import { RootState } from "../../store";
+import { IRootState } from "../../store";
 
 const WeekChef  = (chef:IChef) => {
    const restaurants:IRestaurantState["changedValue"] = useSelector(
-    (state: RootState) => state.restaurants.changedValue
+    (state: IRootState) => state.restaurants.changedValue
   );
 
 
