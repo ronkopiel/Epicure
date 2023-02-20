@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import data from "../data/resturants.json";
 
 const initialRestaurants = data[0].restaurants;
+const date = new Date();
 
 export const restaurantsSlice = createSlice({
   name: "restaurants",
@@ -18,6 +19,13 @@ export const restaurantsSlice = createSlice({
     getNewRestaurants: (state) => {
       state.changedValue = state.value.filter((restaurant) => restaurant.isNew);
     },
+    getOpenRestaurants: (state) => {
+      state.changedValue = state.value.filter(
+        (restaurant) =>
+          restaurant.openingHour <= date.getHours() &&
+          restaurant.closingHour > date.getHours()
+      );
+    },
     reInitializeRestaurants: (state) => {
       state.changedValue = state.value;
     },
@@ -26,6 +34,7 @@ export const restaurantsSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
+  getOpenRestaurants,
   reInitializeRestaurants,
   getNewRestaurants,
   sortPopularity,

@@ -2,13 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import chefsReducer from "./features/chefsSlicer";
 import restaurantsReducer from "./features/restaurantsSlicer";
 import dishesReducer from "./features/dishesSlicer"
-import {RootObject} from "./data/interface"
+import {IRootObject} from "./data/interface"
 
 
 export interface RootState {
-    chefs: RootObject['chefs']
-    restaurants: RootObject['restaurants']
-    dishes: RootObject['dishes']
+    chefs: IRootObject['chefs']
+    restaurants: IRootObject['restaurants']
+    dishes: IRootObject['dishes']
 }
 
 export default configureStore({

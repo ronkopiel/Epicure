@@ -7,7 +7,12 @@ import WeekChef from "./WeekChef";
 import Footer from "../../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { sortPopularity } from "../../features/restaurantsSlicer";
+import {
+  getNewRestaurants,
+  getOpenRestaurants,
+  reInitializeRestaurants,
+  sortPopularity,
+} from "../../features/restaurantsSlicer";
 import {
   IChef,
   IRestaurant,
@@ -28,7 +33,6 @@ const Home: React.FC = () => {
   const dishes: IDishesState["value"] = useSelector(
     (state: RootState) => state.dishes.value
   );
-  dispatch(sortPopularity());
   const popularRestaurants = restaurants.slice(0, 3);
   const signatureDishes = dishes.filter((dish: IDish) => {
     popularRestaurants.map((resaturant: IRestaurant) => {
