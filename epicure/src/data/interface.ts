@@ -45,10 +45,12 @@
     export interface IRestaurantState {
         value: IRestaurant[]
         changedValue: IRestaurant[]
-        chosenRestaurant: IRestaurant
+        chosenRestaurant: IRestaurant[]
       }
     export interface IDishesState {
-        value: IDish[]
+        dishes: IDish[]
+        changedDishes: IDish[]
+        restaurantDishes: number[]
     }
     export interface IRootObject {
         chefs: IChefsState;

@@ -9,7 +9,7 @@ export const restaurantsSlice = createSlice({
   initialState: {
     value: initialRestaurants,
     changedValue: initialRestaurants,
-    chosenRestaurant: {},
+    chosenRestaurant: [{}],
   },
   reducers: {
     sortPopularity: (state) => {
@@ -32,7 +32,12 @@ export const restaurantsSlice = createSlice({
     },
     getRestaurant: (state,action) => {
       const restaurantName:string = action.payload
+      console.log(restaurantName);
+      
       state.chosenRestaurant = state.changedValue.filter((resaturant)=>resaturant.name == restaurantName)
+      const choice = state.chosenRestaurant
+      console.log(choice);
+      
     }
   },
 });

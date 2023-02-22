@@ -100,7 +100,7 @@
         "rating": 3,
         "chefID": 3,
         "viewCount": 0,
-        "signatureDishID":3,
+        "signatureDishID":9,
         "isNew": false,
         "dishes":[9,10,11]
       }, 
@@ -114,7 +114,7 @@
         "rating": 3,
         "chefID": 3,
         "viewCount": 0,
-        "signatureDishID":4,
+        "signatureDishID":12,
         "isNew": true,
         "dishes":[12,13,14]
       },
@@ -128,7 +128,7 @@
         "rating": 3,
         "chefID": 3,
         "viewCount": 0,
-        "signatureDishID":5,
+        "signatureDishID":15,
         "isNew": true,
         "dishes":[15,16,17]
       }

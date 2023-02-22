@@ -33,17 +33,20 @@ const Home: React.FC = () => {
   const restaurants: IRestaurantState["value"] = useSelector(
     (state: IRootState) => state.restaurants.changedValue
   );
-  const dishes: IDishesState["value"] = useSelector(
-    (state: IRootState) => state.dishes.value
+  const dishes: IDishesState["dishes"] = useSelector(
+    (state: IRootState) => state.dishes.dishes
   );
+
   const popularRestaurants = restaurants.slice(0, 3);
+  console.log(popularRestaurants);
   const signatureDishes = dishes.filter((dish: IDish) => {
-    popularRestaurants.map((resaturant: IRestaurant) => {
-      if (resaturant.signatureDishID == dish.id) {
-        return dish;
-      }
-    });
-    return dish;
+    console.log(dish);
+    console.log("restaurants signature dish: "+popularRestaurants[dish.resturantID].signatureDishID);
+    console.log("current dish: "+dish.id+" current restaurant: "+dish.resturantID);
+    console.log(popularRestaurants[dish.resturantID].signatureDishID === dish.id);
+    const a =popularRestaurants[dish.resturantID].signatureDishID 
+    const b = dish.id
+    return a === b
   });
   const chefOfTheWeek = chefs.filter((chef: IChef) => chef.isChefOfTheWeek);
   return (
@@ -58,7 +61,9 @@ const Home: React.FC = () => {
               (resaturant: IRestaurant, index: number) => {
                 return (
                   <RestaurantCard
-                    onClick={()=> {return}}
+                    onClick={() => {
+                      return;
+                    }}
                     restaurant={resaturant}
                     key={index}
                   />
@@ -75,15 +80,10 @@ const Home: React.FC = () => {
           {signatureDishes.map((dish: IDish, index: number) => {
             return (
               <DishCard
-                id={dish.id}
-                name={dish.name}
-                image={dish.image}
-                resturantID={dish.resturantID}
-                ingredients={dish.ingredients}
-                price={dish.price}
-                isSpicy={dish.isSpicy}
-                isVegan={dish.isVegan}
-                isVegitarian={dish.isVegitarian}
+                dish={dish}
+                onClick={() => {
+                  return;
+                }}
                 key={index}
               />
             );
