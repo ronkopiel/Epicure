@@ -103,11 +103,15 @@ h3 {
   width: 100vw;
   height: 64px;
   flex-direction: column;
+  position: relative;
+
 }
 .divider {
   width: 100%;
   height: 0px;
   border: 0.2px solid #97979790;
+  position: absolute;
+  bottom: 0;
 }
 .nav-bar-content {
   display: flex;
@@ -262,8 +266,7 @@ h3 {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  max-width: calc((380+24) * 3px);
+  width: fit-content;
   gap: 24px;
   justify-items: center;
 }
@@ -278,6 +281,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 380px;
   background: #f9f4ea;
   gap: 8px;
 }
@@ -408,12 +412,23 @@ h3 {
 }
 .chef-card {
   position: relative;
-  width: 478px;
-  height: 372px;
+
   background: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.big {
+  width: 70%;
+  height: 70%;
+  max-width: 478px;
+  max-height: 372px;
+}
+small {
+  width: 70%;
+  height: 70%;
+  max-width: 378px;
+  max-height: 338px;
 }
 .chef-name {
   display: flex;
@@ -552,6 +567,8 @@ h3 {
   width: 100%;
   height: 84px;
   background: #ffffff;
+  position: absolute;
+  bottom: 0;
 }
 .footer-links {
   display: flex;
@@ -570,7 +587,7 @@ h3 {
   color: #000000;
   text-decoration: none;
 }
-.restaurant-filter {
+.filter {
   font-family: "Helvetica Neue thin";
   font-style: normal;
   font-weight: 200;
@@ -580,14 +597,14 @@ h3 {
   color: #000000;
   text-transform: none;
 }
-.restaurant-filters {
+.filters {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
   gap: 40px;
 }
-.restaurant-filters-container {
+.filters-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -596,7 +613,7 @@ h3 {
   gap: 10px;
   background: #ffffff;
 }
-.restaurants-page-container {
+.page-container {
   display: flex;
   flex-direction: column;
   align-items: center;

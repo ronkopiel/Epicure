@@ -4,10 +4,10 @@
       {
         "firstName": "Ran",
         "lastName": "Shmueli",
-        "portrait": "",
+        "portrait": "./assets/yossishitrit.png",
         "isChefOfTheWeek": false,
-        "isNew": false,
-        "viewCount": 0,
+        "isNew": true,
+        "viewCount": 1,
         "resturants": [0],
         "id":0,
         "chefDescription": ""
@@ -15,10 +15,10 @@
       {
         "firstName": "Meir",
         "lastName": "Adoni",
-        "portrait": "",
+        "portrait": "./assets/yossishitrit.png",
         "isChefOfTheWeek": false,
         "isNew": false,
-        "viewCount": 0,
+        "viewCount": 123123,
         "resturants": [1],
         "id":1,
         "chefDescription": ""
@@ -26,10 +26,10 @@
       {
         "firstName": "Yanir",
         "lastName": "Green",
-        "portrait": "",
+        "portrait": "./assets/yossishitrit.png",
         "isChefOfTheWeek": false,
-        "isNew": false,
-        "viewCount": 0,
+        "isNew": true,
+        "viewCount": 20,
         "resturants": [2],
         "id":2,
         "chefDescription": ""
@@ -40,7 +40,7 @@
         "portrait": "./assets/yossishitrit.png",
         "isChefOfTheWeek": true,
         "isNew": false,
-        "viewCount": 0,
+        "viewCount": 1231,
         "resturants": [3,4,5],
         "id":3,
         "chefDescription": "Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav  Udim. Shitrit's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish."
@@ -59,7 +59,8 @@
         "chefID": 0,
         "viewCount": 267,
         "signatureDishID":0,
-        "isNew": false
+        "isNew": false,
+        "dishes":[0,3,4]
       },
       {
         "id": 1,
@@ -72,7 +73,8 @@
         "chefID": 1,
         "viewCount": 1554,
         "signatureDishID":1,
-        "isNew": false
+        "isNew": false,
+        "dishes":[1,5,6]
       },
       {
         "id": 2,
@@ -85,7 +87,8 @@
         "chefID": 2,
         "viewCount": 24,
         "signatureDishID":2,
-        "isNew": true
+        "isNew": true,
+        "dishes":[2,7,8]
       },
      {
         "id": 3,
@@ -98,7 +101,8 @@
         "chefID": 3,
         "viewCount": 0,
         "signatureDishID":3,
-        "isNew": false
+        "isNew": false,
+        "dishes":[9,10,11]
       }, 
       {
         "id": 4,
@@ -111,7 +115,8 @@
         "chefID": 3,
         "viewCount": 0,
         "signatureDishID":4,
-        "isNew": true
+        "isNew": true,
+        "dishes":[12,13,14]
       },
       {
         "id": 5,
@@ -124,7 +129,8 @@
         "chefID": 3,
         "viewCount": 0,
         "signatureDishID":5,
-        "isNew": true
+        "isNew": true,
+        "dishes":[15,16,17]
       }
     ],
     "dishes": [
@@ -160,6 +166,169 @@
         "isVegan": true,
         "isVegitarian": false,
         "id": 2
+      },
+      {
+        "resturantID": 0,
+        "name": "Pad Ki Mao",
+        "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+        "price": 0,
+        "image": "./assets/rectangle_2@3x.png",
+        "isSpicy": true,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 3
+      },
+      {
+        "resturantID": 1,
+        "name": "Garbanzo Frito",
+        "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
+        "price": 98,
+        "image": "./assets/garbanzoDesktop.png",
+        "isSpicy": false,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 5
+      },
+      {
+        "resturantID": 2,
+        "name": "Smoked Pizza",
+        "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
+        "price": 0,
+        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "isSpicy": false,
+        "isVegan": true,
+        "isVegitarian": false,
+        "id": 7
+      },
+      {
+        "resturantID": 0,
+        "name": "Pad Ki Mao",
+        "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+        "price": 0,
+        "image": "./assets/rectangle_2@3x.png",
+        "isSpicy": true,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 4
+      },
+      {
+        "resturantID": 1,
+        "name": "Garbanzo Frito",
+        "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
+        "price": 98,
+        "image": "./assets/garbanzoDesktop.png",
+        "isSpicy": false,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 6
+      },
+      {
+        "resturantID": 2,
+        "name": "Smoked Pizza",
+        "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
+        "price": 0,
+        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "isSpicy": false,
+        "isVegan": true,
+        "isVegitarian": false,
+        "id": 8
+      },
+      {
+        "resturantID": 3,
+        "name": "Pad Ki Mao",
+        "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+        "price": 0,
+        "image": "./assets/rectangle_2@3x.png",
+        "isSpicy": true,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 9
+      },
+      {
+        "resturantID": 3,
+        "name": "Garbanzo Frito",
+        "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
+        "price": 98,
+        "image": "./assets/garbanzoDesktop.png",
+        "isSpicy": false,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 10
+      },
+      {
+        "resturantID": 3,
+        "name": "Smoked Pizza",
+        "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
+        "price": 0,
+        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "isSpicy": false,
+        "isVegan": true,
+        "isVegitarian": false,
+        "id": 11
+      },      {
+        "resturantID": 4,
+        "name": "Pad Ki Mao",
+        "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+        "price": 0,
+        "image": "./assets/rectangle_2@3x.png",
+        "isSpicy": true,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 12
+      },
+      {
+        "resturantID": 4,
+        "name": "Garbanzo Frito",
+        "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
+        "price": 98,
+        "image": "./assets/garbanzoDesktop.png",
+        "isSpicy": false,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 13
+      },
+      {
+        "resturantID": 4,
+        "name": "Smoked Pizza",
+        "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
+        "price": 0,
+        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "isSpicy": false,
+        "isVegan": true,
+        "isVegitarian": false,
+        "id": 13
+      },      {
+        "resturantID": 5,
+        "name": "Pad Ki Mao",
+        "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+        "price": 0,
+        "image": "./assets/rectangle_2@3x.png",
+        "isSpicy": true,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 15
+      },
+      {
+        "resturantID": 5,
+        "name": "Garbanzo Frito",
+        "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
+        "price": 98,
+        "image": "./assets/garbanzoDesktop.png",
+        "isSpicy": false,
+        "isVegan": false,
+        "isVegitarian": false,
+        "id": 16
+      },
+      {
+        "resturantID": 5,
+        "name": "Smoked Pizza",
+        "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
+        "price": 0,
+        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "isSpicy": false,
+        "isVegan": true,
+        "isVegitarian": false,
+        "id": 17
       }
     ]
   }

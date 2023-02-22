@@ -2,15 +2,18 @@ import React from "react"
 import {IRestaurant} from "./../data/interface";
 import Rating from "./Rating";
 
-
-const RestaurantCard:React.FC<IRestaurant> = (resaturant) => {
+interface Card {
+  restaurant:IRestaurant
+  onClick: () => void;
+}
+const RestaurantCard:React.FC<Card> = (props) => {
   return (
     <>
-    <div className="resaturant-card">
-        <img src={resaturant.img} alt="" className="resaturant-card-img" />
-        <h3>{resaturant.name}</h3>
-        <span>{resaturant.chefName}</span>
-        <Rating rating={resaturant.rating}/>
+    <div className="resaturant-card" onClick={()=>props.onClick()} >
+        <img src={props.restaurant.img} alt="" className="resaturant-card-img" />
+        <h3>{props.restaurant.name}</h3>
+        <span>{props.restaurant.chefName}</span>
+        <Rating rating={props.restaurant.rating}/>
     </div>
     </>
   )

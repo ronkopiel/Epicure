@@ -58,22 +58,8 @@ const Home: React.FC = () => {
               (resaturant: IRestaurant, index: number) => {
                 return (
                   <RestaurantCard
-                    id={resaturant.id}
-                    name={resaturant.name}
-                    img={resaturant.img}
-                    openingHour={resaturant.openingHour}
-                    closingHour={resaturant.closingHour}
-                    address={resaturant.address}
-                    rating={resaturant.rating}
-                    chefID={resaturant.chefID}
-                    viewCount={resaturant.viewCount}
-                    chefName={
-                      chefs[resaturant.chefID].firstName +
-                      " " +
-                      chefs[resaturant.chefID].lastName
-                    }
-                    signatureDishID={resaturant.signatureDishID}
-                    isNew={resaturant.isNew}
+                    onClick={()=> {return}}
+                    restaurant={resaturant}
                     key={index}
                   />
                 );

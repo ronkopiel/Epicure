@@ -24,6 +24,7 @@
         chefName: string;
         signatureDishID:number;
         isNew: boolean;
+        dishes:number[];
     }
 
     export interface IDish {
@@ -39,10 +40,12 @@
     }
     export interface IChefsState {
         value: IChef[]
+        changedValue: IChef[]
     }
     export interface IRestaurantState {
         value: IRestaurant[]
         changedValue: IRestaurant[]
+        chosenRestaurant: IRestaurant
       }
     export interface IDishesState {
         value: IDish[]
