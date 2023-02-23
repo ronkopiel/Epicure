@@ -33,21 +33,18 @@ const Home: React.FC = () => {
   const restaurants: IRestaurantState["value"] = useSelector(
     (state: IRootState) => state.restaurants.changedValue
   );
-  const dishes: IDishesState["dishes"] = useSelector(
-    (state: IRootState) => state.dishes.dishes
+  const dishes: IDishesState["initialDishes"] = useSelector(
+    (state: IRootState) => state.dishes.initialDishes
   );
 
   const popularRestaurants = restaurants.slice(0, 3);
-  console.log(popularRestaurants);
-  const signatureDishes = dishes.filter((dish: IDish) => {
-    console.log(dish);
-    console.log("restaurants signature dish: "+popularRestaurants[dish.resturantID].signatureDishID);
-    console.log("current dish: "+dish.id+" current restaurant: "+dish.resturantID);
-    console.log(popularRestaurants[dish.resturantID].signatureDishID === dish.id);
-    const a =popularRestaurants[dish.resturantID].signatureDishID 
-    const b = dish.id
-    return a === b
+  const popularRestaurantsSignatueDishes: number[] = [];
+  popularRestaurants.forEach((restaurant) => {
+    popularRestaurantsSignatueDishes.push(restaurant.signatureDishID);
   });
+  const signatureDishes = dishes.filter((dish: IDish) =>
+    popularRestaurantsSignatueDishes.includes(dish.id)
+  );
   const chefOfTheWeek = chefs.filter((chef: IChef) => chef.isChefOfTheWeek);
   return (
     <>

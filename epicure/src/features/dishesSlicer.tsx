@@ -1,24 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 import data from "../data/resturants.json"
 const initialDishes = data[0].dishes
-const initialRestaurantDishes:number[] = []
+const initialRestaurantDishIDs:number[] = []
 export const dishesSlice = createSlice({
-  name: "chefs",
+  name: "dishes",
   initialState: {
-    dishes: initialDishes,
+    initialDishes:initialDishes,
+    restaurantDishes: initialDishes,
     changedDishes:initialDishes,
-    restaurantDishes: initialRestaurantDishes,
+    restaurantDishesIDs: initialRestaurantDishIDs,
   },
   reducers: {
     setRestaurantDishes: (state, action) => {
-      state.restaurantDishes = action.payload;
-      const releventDishes= state.restaurantDishes
-      state.changedDishes = state.dishes.filter((dish)=>releventDishes.includes(dish.id,0))
+      state.restaurantDishesIDs = action.payload;
+      const releventDishes= state.restaurantDishesIDs
+      state.restaurantDishes = state.initialDishes.filter((dish)=>releventDishes.includes(dish.id))      
     },
+    getServiceDishes: (state, action) => {
+      console.log(action.payload);
+      state.changedDishes = state.restaurantDishes.filter((dish)=> dish.service === action.payload)
+    },
+    reInitializeDishes:(state) => {
+      state.changedDishes = state.initialDishes
+      state.restaurantDishes = state.initialDishes
+      state.restaurantDishesIDs = []
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setRestaurantDishes } = dishesSlice.actions;
+export const {reInitializeDishes, setRestaurantDishes, getServiceDishes } = dishesSlice.actions;
 
 export default dishesSlice.reducer;

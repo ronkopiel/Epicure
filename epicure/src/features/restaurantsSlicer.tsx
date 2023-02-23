@@ -32,12 +32,7 @@ export const restaurantsSlice = createSlice({
     },
     getRestaurant: (state,action) => {
       const restaurantName:string = action.payload
-      console.log(restaurantName);
-      
       state.chosenRestaurant = state.changedValue.filter((resaturant)=>resaturant.name == restaurantName)
-      const choice = state.chosenRestaurant
-      console.log(choice);
-      
     }
   },
 });

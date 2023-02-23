@@ -4,7 +4,7 @@
       {
         "firstName": "Ran",
         "lastName": "Shmueli",
-        "portrait": "./assets/yossishitrit.png",
+        "portrait": "/assets/yossishitrit.png",
         "isChefOfTheWeek": false,
         "isNew": true,
         "viewCount": 1,
@@ -15,7 +15,7 @@
       {
         "firstName": "Meir",
         "lastName": "Adoni",
-        "portrait": "./assets/yossishitrit.png",
+        "portrait": "/assets/yossishitrit.png",
         "isChefOfTheWeek": false,
         "isNew": false,
         "viewCount": 123123,
@@ -26,7 +26,7 @@
       {
         "firstName": "Yanir",
         "lastName": "Green",
-        "portrait": "./assets/yossishitrit.png",
+        "portrait": "/assets/yossishitrit.png",
         "isChefOfTheWeek": false,
         "isNew": true,
         "viewCount": 20,
@@ -37,7 +37,7 @@
       {
         "firstName": "Yossi",
         "lastName": "Shitrit",
-        "portrait": "./assets/yossishitrit.png",
+        "portrait": "/assets/yossishitrit.png",
         "isChefOfTheWeek": true,
         "isNew": false,
         "viewCount": 1231,
@@ -51,7 +51,7 @@
       {
         "id": 0,
         "name": "Claro",
-        "img": "./assets/claro.png",
+        "img": "/assets/claro.png",
         "openingHour": 8,
         "closingHour": 18,
         "address": "",
@@ -65,7 +65,7 @@
       {
         "id": 1,
         "name": "Lumina",
-        "img": "./assets/mizlala-gret-mullet-fillet-desktop@2x.png",
+        "img": "/assets/mizlala-gret-mullet-fillet-desktop@2x.png",
         "openingHour": 8,
         "closingHour": 13,
         "address": "",
@@ -79,7 +79,7 @@
       {
         "id": 2,
         "name": "Tiger Lilly",
-        "img": "./assets/tiger-lili.png",
+        "img": "/assets/tiger-lili.png",
         "openingHour": 12,
         "closingHour": 16,
         "address": "",
@@ -93,7 +93,7 @@
      {
         "id": 3,
         "name": "onza",
-        "img": "./assets/screen-shot-2019-01-06-at-10-55-45@2x.png",
+        "img": "/assets/screen-shot-2019-01-06-at-10-55-45@2x.png",
         "openingHour": 8,
         "closingHour": 20,
         "address": "",
@@ -107,7 +107,7 @@
       {
         "id": 4,
         "name": "Kitchen Market",
-        "img": "./assets/screen-shot-2019-01-06-at-10-57-26@2x.png",
+        "img": "/assets/screen-shot-2019-01-06-at-10-57-26@2x.png",
         "openingHour": 12,
         "closingHour": 24,
         "address": "",
@@ -121,7 +121,7 @@
       {
         "id": 5,
         "name": "Mashya",
-        "img": "./assets/mashya.png",
+        "img": "/assets/mashya.png",
         "openingHour": 10,
         "closingHour": 23,
         "address": "",
@@ -139,196 +139,214 @@
         "name": "Pad Ki Mao",
         "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
         "price": 0,
-        "image": "./assets/rectangle_2@3x.png",
+        "image": "/assets/rectangle_2@3x.png",
         "isSpicy": true,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 0
+        "id": 0,
+        "service": "Breakfast"
       },
       {
         "resturantID": 1,
         "name": "Garbanzo Frito",
         "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
         "price": 98,
-        "image": "./assets/garbanzoDesktop.png",
+        "image": "/assets/garbanzoDesktop.png",
         "isSpicy": false,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 1
+        "id": 1,
+        "service": "Breakfast"
       },
       {
         "resturantID": 2,
         "name": "Smoked Pizza",
         "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
         "price": 0,
-        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "image": "/assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
         "isSpicy": false,
         "isVegan": true,
         "isVegitarian": false,
-        "id": 2
+        "id": 2,
+        "service": "Breakfast"
       },
       {
         "resturantID": 0,
         "name": "Pad Ki Mao",
         "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
         "price": 0,
-        "image": "./assets/rectangle_2@3x.png",
+        "image": "/assets/rectangle_2@3x.png",
         "isSpicy": true,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 3
+        "id": 3,
+        "service": "Lunch"
       },
       {
         "resturantID": 1,
         "name": "Garbanzo Frito",
         "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
         "price": 98,
-        "image": "./assets/garbanzoDesktop.png",
+        "image": "/assets/garbanzoDesktop.png",
         "isSpicy": false,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 5
+        "id": 5,
+        "service": "Lunch"
       },
       {
         "resturantID": 2,
         "name": "Smoked Pizza",
         "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
         "price": 0,
-        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "image": "/assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
         "isSpicy": false,
         "isVegan": true,
         "isVegitarian": false,
-        "id": 7
+        "id": 7,
+        "service": "Lunch"
       },
       {
         "resturantID": 0,
         "name": "Pad Ki Mao",
         "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
         "price": 0,
-        "image": "./assets/rectangle_2@3x.png",
+        "image": "/assets/rectangle_2@3x.png",
         "isSpicy": true,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 4
+        "id": 4,
+        "service": "Dinner"
       },
       {
         "resturantID": 1,
         "name": "Garbanzo Frito",
         "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
         "price": 98,
-        "image": "./assets/garbanzoDesktop.png",
+        "image": "/assets/garbanzoDesktop.png",
         "isSpicy": false,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 6
+        "id": 6,
+        "service": "Dinner"
       },
       {
         "resturantID": 2,
         "name": "Smoked Pizza",
         "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
         "price": 0,
-        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "image": "/assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
         "isSpicy": false,
         "isVegan": true,
         "isVegitarian": false,
-        "id": 8
+        "id": 8,
+        "service": "Dinner"
       },
       {
         "resturantID": 3,
         "name": "Pad Ki Mao",
         "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
         "price": 0,
-        "image": "./assets/rectangle_2@3x.png",
+        "image": "/assets/rectangle_2@3x.png",
         "isSpicy": true,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 9
+        "id": 9,
+        "service": "Breakfast"
       },
       {
         "resturantID": 3,
         "name": "Garbanzo Frito",
         "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
         "price": 98,
-        "image": "./assets/garbanzoDesktop.png",
+        "image": "/assets/garbanzoDesktop.png",
         "isSpicy": false,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 10
+        "id": 10,
+        "service": "Breakfast"
       },
       {
         "resturantID": 3,
         "name": "Smoked Pizza",
         "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
         "price": 0,
-        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "image": "/assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
         "isSpicy": false,
         "isVegan": true,
         "isVegitarian": false,
-        "id": 11
+        "id": 11,
+        "service": "Breakfast"
       },      {
         "resturantID": 4,
         "name": "Pad Ki Mao",
         "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
         "price": 0,
-        "image": "./assets/rectangle_2@3x.png",
+        "image": "/assets/rectangle_2@3x.png",
         "isSpicy": true,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 12
+        "id": 12,
+        "service": "Lunch"
       },
       {
         "resturantID": 4,
         "name": "Garbanzo Frito",
         "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
         "price": 98,
-        "image": "./assets/garbanzoDesktop.png",
+        "image": "/assets/garbanzoDesktop.png",
         "isSpicy": false,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 13
+        "id": 13,
+        "service": "Lunch"
       },
       {
         "resturantID": 4,
         "name": "Smoked Pizza",
         "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
         "price": 0,
-        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "image": "/assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
         "isSpicy": false,
         "isVegan": true,
         "isVegitarian": false,
-        "id": 13
+        "id": 13,
+        "service": "Lunch"
       },      {
         "resturantID": 5,
         "name": "Pad Ki Mao",
         "ingredients": "Shrimp, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
         "price": 0,
-        "image": "./assets/rectangle_2@3x.png",
+        "image": "/assets/rectangle_2@3x.png",
         "isSpicy": true,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 15
+        "id": 15,
+        "service": "Dinner"
       },
       {
         "resturantID": 5,
         "name": "Garbanzo Frito",
         "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
         "price": 98,
-        "image": "./assets/garbanzoDesktop.png",
+        "image": "/assets/garbanzoDesktop.png",
         "isSpicy": false,
         "isVegan": false,
         "isVegitarian": false,
-        "id": 16
+        "id": 16,
+        "service": "Dinner"
       },
       {
         "resturantID": 5,
         "name": "Smoked Pizza",
         "ingredients": "Basil dough, cashew 'butter', demi-glace, bison & radish",
         "price": 0,
-        "image": "./assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
+        "image": "/assets/screen-shot-2019-01-06-at-10-57-26@3x.png",
         "isSpicy": false,
         "isVegan": true,
         "isVegitarian": false,
-        "id": 17
+        "id": 17,
+        "service": "Dinner"
       }
     ]
   }
