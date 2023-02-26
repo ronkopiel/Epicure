@@ -21,9 +21,9 @@
         rating: number;
         chefID: number;
         viewCount: number;
-        chefName: string;
         signatureDishID:number;
         isNew: boolean;
+        dishes:number[];
     }
 
     export interface IDish {
@@ -36,16 +36,22 @@
         isVegan: boolean;
         isVegitarian: boolean;
         id: number;
+        service: string;
     }
     export interface IChefsState {
         value: IChef[]
+        changedValue: IChef[]
     }
     export interface IRestaurantState {
         value: IRestaurant[]
         changedValue: IRestaurant[]
+        chosenRestaurant: IRestaurant[]
       }
     export interface IDishesState {
-        value: IDish[]
+        initialDishes: IDish[]
+        changedDishes: IDish[]
+        restaurantDishes: IDish[]
+        restaurantDishesIDs: number[]
     }
     export interface IRootObject {
         chefs: IChefsState;

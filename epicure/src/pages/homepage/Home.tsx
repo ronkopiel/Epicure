@@ -33,18 +33,18 @@ const Home: React.FC = () => {
   const restaurants: IRestaurantState["value"] = useSelector(
     (state: IRootState) => state.restaurants.changedValue
   );
-  const dishes: IDishesState["value"] = useSelector(
-    (state: IRootState) => state.dishes.value
+  const dishes: IDishesState["initialDishes"] = useSelector(
+    (state: IRootState) => state.dishes.initialDishes
   );
+
   const popularRestaurants = restaurants.slice(0, 3);
-  const signatureDishes = dishes.filter((dish: IDish) => {
-    popularRestaurants.map((resaturant: IRestaurant) => {
-      if (resaturant.signatureDishID == dish.id) {
-        return dish;
-      }
-    });
-    return dish;
+  const popularRestaurantsSignatueDishes: number[] = [];
+  popularRestaurants.forEach((restaurant) => {
+    popularRestaurantsSignatueDishes.push(restaurant.signatureDishID);
   });
+  const signatureDishes = dishes.filter((dish: IDish) =>
+    popularRestaurantsSignatueDishes.includes(dish.id)
+  );
   const chefOfTheWeek = chefs.filter((chef: IChef) => chef.isChefOfTheWeek);
   return (
     <>
@@ -58,22 +58,10 @@ const Home: React.FC = () => {
               (resaturant: IRestaurant, index: number) => {
                 return (
                   <RestaurantCard
-                    id={resaturant.id}
-                    name={resaturant.name}
-                    img={resaturant.img}
-                    openingHour={resaturant.openingHour}
-                    closingHour={resaturant.closingHour}
-                    address={resaturant.address}
-                    rating={resaturant.rating}
-                    chefID={resaturant.chefID}
-                    viewCount={resaturant.viewCount}
-                    chefName={
-                      chefs[resaturant.chefID].firstName +
-                      " " +
-                      chefs[resaturant.chefID].lastName
-                    }
-                    signatureDishID={resaturant.signatureDishID}
-                    isNew={resaturant.isNew}
+                    onClick={() => {
+                      return;
+                    }}
+                    restaurant={resaturant}
                     key={index}
                   />
                 );
@@ -89,15 +77,10 @@ const Home: React.FC = () => {
           {signatureDishes.map((dish: IDish, index: number) => {
             return (
               <DishCard
-                id={dish.id}
-                name={dish.name}
-                image={dish.image}
-                resturantID={dish.resturantID}
-                ingredients={dish.ingredients}
-                price={dish.price}
-                isSpicy={dish.isSpicy}
-                isVegan={dish.isVegan}
-                isVegitarian={dish.isVegitarian}
+                dish={dish}
+                onClick={() => {
+                  return;
+                }}
                 key={index}
               />
             );

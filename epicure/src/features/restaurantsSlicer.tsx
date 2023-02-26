@@ -9,10 +9,11 @@ export const restaurantsSlice = createSlice({
   initialState: {
     value: initialRestaurants,
     changedValue: initialRestaurants,
+    chosenRestaurant: [{}],
   },
   reducers: {
     sortPopularity: (state) => {
-      state.changedValue = state.value.sort(
+      state.changedValue = state.changedValue.sort(
         (a, b) => b.viewCount - a.viewCount
       );
     },
@@ -29,6 +30,10 @@ export const restaurantsSlice = createSlice({
     reInitializeRestaurants: (state) => {
       state.changedValue = state.value;
     },
+    getRestaurant: (state,action) => {
+      const restaurantName:string = action.payload
+      state.chosenRestaurant = state.changedValue.filter((resaturant)=>resaturant.name == restaurantName)
+    }
   },
 });
 
@@ -38,6 +43,7 @@ export const {
   reInitializeRestaurants,
   getNewRestaurants,
   sortPopularity,
+  getRestaurant,
 } = restaurantsSlice.actions;
 
 export default restaurantsSlice.reducer;

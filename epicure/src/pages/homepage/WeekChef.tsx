@@ -20,15 +20,8 @@ const WeekChef  = (chef:IChef) => {
         <h2>chef of the week</h2>
         <div className="chef-week-card-container">
           <ChefCard
-            firstName={chef.firstName}
-            lastName={chef.lastName}
-            portrait={chef.portrait}
-            isChefOfTheWeek={chef.isChefOfTheWeek}
-            isNew={chef.isNew}
-            viewCount={chef.viewCount}
-            resturants={chef.resturants}
-            id={chef.id}
-            chefDescription={chef.chefDescription}
+            chef={chef}
+            size={"big"}
           />
           <div className="chef-description">{chef.chefDescription}</div>
         </div>
@@ -37,18 +30,7 @@ const WeekChef  = (chef:IChef) => {
           {chefsRestaurants.map((resaturant:IRestaurant, index:number) => {
             return (
               <MiniRestaurantCard
-                id={resaturant.id}
-                name={resaturant.name}
-                img={resaturant.img}
-                openingHour={resaturant.openingHour}
-                closingHour={resaturant.closingHour}
-                address={resaturant.address}
-                rating={resaturant.rating}
-                chefID={resaturant.chefID}
-                viewCount={resaturant.viewCount}
-                chefName={chef.firstName + " " + chef.lastName}
-                signatureDishID={resaturant.signatureDishID}
-                isNew={resaturant.isNew}
+                restaurant={resaturant}
                 key={index}
               />
             );

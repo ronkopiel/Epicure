@@ -4,7 +4,12 @@ import Spicy from "./Spicy";
 import Vegan from "./Vegan";
 import Vegitarian from "./Vegitarian";
 
-const DishCard: React.FC<IDish> = (dish) => {
+interface Card {
+  dish:IDish
+  onClick: () => void;
+}
+const DishCard: React.FC<Card> = (props) => {
+  const dish = props.dish;
   return (
     <>
       <div className="dish-card">

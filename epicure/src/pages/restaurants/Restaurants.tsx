@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import RestaurantCard from "../../components/RestaurantCard";
 import {
@@ -8,10 +10,12 @@ import {
   IRestaurantState,
 } from "../../data/interface";
 import { IRootState } from "../../store";
+import Restaurant from "./Restaurant";
 import RestaurantFilters from "./RestaurantFilters";
 import RestaurantsPopUpFilters from "./RestaurantsPopUpFilters";
 
 const Restaurants: React.FC = () => {
+  const navigate = useNavigate();
   const chefs: IChefsState["value"] = useSelector(
     (state: IRootState) => state.chefs.value
   );
@@ -21,34 +25,21 @@ const Restaurants: React.FC = () => {
   return (
     <>
       <NavBar />
-      <div className="restaurants-page-container">
+      <div className="page-container">
         <RestaurantFilters />
         <RestaurantsPopUpFilters />
         <div className="grid">
           {restaurants.map((resaturant: IRestaurant, index: number) => {
             return (
               <RestaurantCard
-                id={resaturant.id}
-                name={resaturant.name}
-                img={resaturant.img}
-                openingHour={resaturant.openingHour}
-                closingHour={resaturant.closingHour}
-                address={resaturant.address}
-                rating={resaturant.rating}
-                chefID={resaturant.chefID}
-                viewCount={resaturant.viewCount}
-                chefName={
-                  chefs[resaturant.chefID].firstName +
-                  " " +
-                  chefs[resaturant.chefID].lastName
-                }
-                signatureDishID={resaturant.signatureDishID}
-                isNew={resaturant.isNew}
+                onClick={() => navigate(resaturant.name)}
+                restaurant={resaturant}
                 key={index}
               />
             );
           })}
         </div>
+        <Footer />
       </div>
     </>
   );

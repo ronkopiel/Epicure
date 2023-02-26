@@ -1,16 +1,25 @@
 import React from "react"
-import {IRestaurant} from "./../data/interface";
+import { useSelector } from "react-redux";
+import { IRootState } from "../store";
+import {IChefsState, IRestaurant} from "./../data/interface";
 import Rating from "./Rating";
 
-
-const RestaurantCard:React.FC<IRestaurant> = (resaturant) => {
+interface Card {
+  restaurant:IRestaurant
+  onClick: () => void;
+}
+const RestaurantCard:React.FC<Card> = (props) => {
+  const chefs: IChefsState["value"] = useSelector(
+    (state: IRootState) => state.chefs.value
+  );
+  const restaurant = props.restaurant
   return (
     <>
-    <div className="resaturant-card">
-        <img src={resaturant.img} alt="" className="resaturant-card-img" />
-        <h3>{resaturant.name}</h3>
-        <span>{resaturant.chefName}</span>
-        <Rating rating={resaturant.rating}/>
+    <div className="resaturant-card" onClick={()=>props.onClick()} >
+        <img src={restaurant.img} alt="" className="resaturant-card-img" />
+        <h3>{restaurant.name}</h3>
+        <span>{chefs[restaurant.chefID].firstName+" "+chefs[restaurant.chefID].lastName}</span>
+        <Rating rating={restaurant.rating}/>
     </div>
     </>
   )
