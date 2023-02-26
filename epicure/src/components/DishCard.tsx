@@ -9,22 +9,23 @@ interface Card {
   onClick: () => void;
 }
 const DishCard: React.FC<Card> = (props) => {
+  const dish = props.dish;
   return (
     <>
       <div className="dish-card">
-        <img src={props.dish.image} alt="" className="dish-card-img" />
+        <img src={dish.image} alt="" className="dish-card-img" />
         <div className="dish-info">
-          <h3 className="dish-name">{props.dish.name}</h3>
+          <h3 className="dish-name">{dish.name}</h3>
           <div className="dish-icons">
-            <Vegan isVegan={props.dish.isVegan} />
-            <Spicy isSpicy={props.dish.isSpicy} />
-            <Vegitarian isVegitarian={props.dish.isVegitarian} />
+            <Vegan isVegan={dish.isVegan} />
+            <Spicy isSpicy={dish.isSpicy} />
+            <Vegitarian isVegitarian={dish.isVegitarian} />
           </div>
-          <span className="ingridients">{props.dish.ingredients}</span>
-          <div className={props.dish.isSpicy||props.dish.isVegan||props.dish.isVegitarian ? "hidden" : "price"} >
+          <span className="ingridients">{dish.ingredients}</span>
+          <div className={dish.isSpicy||dish.isVegan||dish.isVegitarian ? "hidden" : "price"} >
             <div className="line"></div>
             <img src="/assets/ils 1.svg" alt="" />
-            {props.dish.price}
+            {dish.price}
             <div className="line"></div>
           </div>
         </div>

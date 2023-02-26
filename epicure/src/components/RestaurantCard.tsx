@@ -12,13 +12,14 @@ const RestaurantCard:React.FC<Card> = (props) => {
   const chefs: IChefsState["value"] = useSelector(
     (state: IRootState) => state.chefs.value
   );
+  const restaurant = props.restaurant
   return (
     <>
     <div className="resaturant-card" onClick={()=>props.onClick()} >
-        <img src={props.restaurant.img} alt="" className="resaturant-card-img" />
-        <h3>{props.restaurant.name}</h3>
-        <span>{chefs[props.restaurant.chefID].firstName+" "+chefs[props.restaurant.chefID].lastName}</span>
-        <Rating rating={props.restaurant.rating}/>
+        <img src={restaurant.img} alt="" className="resaturant-card-img" />
+        <h3>{restaurant.name}</h3>
+        <span>{chefs[restaurant.chefID].firstName+" "+chefs[restaurant.chefID].lastName}</span>
+        <Rating rating={restaurant.rating}/>
     </div>
     </>
   )
