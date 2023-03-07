@@ -12,22 +12,18 @@ const RestaurantFilters: React.FC = () => {
     <div className="filters-container">
       <div className="filters">
         <FilterButton
-          init={reInitializeRestaurants}
           function={reInitializeRestaurants}
           text={"All"}
         />
         <FilterButton
-          init={reInitializeRestaurants}
           function={getNewRestaurants}
           text={"New"}
         />
         <FilterButton
-          init={reInitializeRestaurants}
           function={sortPopularity}
           text={"Most Popular"}
         />
         <FilterButton
-          init={reInitializeRestaurants}
           function={getOpenRestaurants}
           text={"Open Now"}
         />

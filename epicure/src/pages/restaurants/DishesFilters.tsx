@@ -1,6 +1,7 @@
 import React from "react";
 import FilterButton from "../../components/FilterButton";
-import { getServiceDishes, reInitializeDishes } from "../../features/dishesSlicer";
+import { setServiceDishes } from "../../features/dishesSlicer";
+
 
 const DishesFilters: React.FC = () => {
   return (
@@ -8,18 +9,15 @@ const DishesFilters: React.FC = () => {
       <div className="filters">
 
       <FilterButton
-          init={reInitializeDishes}
-          function={()=>getServiceDishes('BreakFast')}
-          text={"BreakFast"}
+          function={()=>setServiceDishes('Breakfast')}
+          text={"Breakfast"}
         />
         <FilterButton
-          init={reInitializeDishes}
-          function={()=>getServiceDishes('Lunch')}
+          function={()=>setServiceDishes("Lunch")}
           text={"Lunch"}
         />
         <FilterButton
-          init={reInitializeDishes}
-          function={()=>getServiceDishes('Dinner')}
+          function={()=>setServiceDishes("Dinner")}
           text={"Dinner"}
         />
       </div>

@@ -1,34 +1,41 @@
 import { createSlice } from "@reduxjs/toolkit";
-import data from "../data/resturants.json"
-const initialDishes = data[0].dishes
-const initialRestaurantDishIDs:number[] = []
+import data from "../data/resturants.json";
+const initialDishes = data[0].dishes;
+const initialRestaurantDishIDs: number[] = [];
 export const dishesSlice = createSlice({
   name: "dishes",
   initialState: {
-    initialDishes:initialDishes,
+    initialDishes: initialDishes,
     restaurantDishes: initialDishes,
-    changedDishes:initialDishes,
+    serviceDishes: initialDishes,
     restaurantDishesIDs: initialRestaurantDishIDs,
   },
   reducers: {
     setRestaurantDishes: (state, action) => {
       state.restaurantDishesIDs = action.payload;
-      const releventDishes= state.restaurantDishesIDs
-      state.restaurantDishes = state.initialDishes.filter((dish)=>releventDishes.includes(dish.id))      
+      const releventDishes = state.restaurantDishesIDs;
+      state.restaurantDishes = state.initialDishes.filter((dish) =>
+        releventDishes.includes(dish.id)
+      );
+      state.serviceDishes = state.restaurantDishes;
     },
-    getServiceDishes: (state, action) => {
-      console.log(action.payload);
-      state.changedDishes = state.restaurantDishes.filter((dish)=> dish.service === action.payload)
+    setServiceDishes: (state, action) => {
+      console.log(state.serviceDishes);
+      
+      state.serviceDishes = state.restaurantDishes.filter(
+        (dish) => dish.service === action.payload
+      );
     },
-    reInitializeDishes:(state) => {
-      state.changedDishes = state.initialDishes
-      state.restaurantDishes = state.initialDishes
-      state.restaurantDishesIDs = []
-    }
+    reInitializeDishes: (state) => {
+      state.serviceDishes = state.initialDishes;
+      state.restaurantDishes = state.initialDishes;
+      state.restaurantDishesIDs = [];
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {reInitializeDishes, setRestaurantDishes, getServiceDishes } = dishesSlice.actions;
+export const { reInitializeDishes, setRestaurantDishes, setServiceDishes } =
+  dishesSlice.actions;
 
 export default dishesSlice.reducer;

@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import data from "../data/resturants.json";
 
 const initialRestaurants = data[0].restaurants;
+const initialRestaurant = initialRestaurants[0]
 const date = new Date();
 
 export const restaurantsSlice = createSlice({
@@ -9,7 +10,7 @@ export const restaurantsSlice = createSlice({
   initialState: {
     value: initialRestaurants,
     changedValue: initialRestaurants,
-    chosenRestaurant: [{}],
+    chosenRestaurant: initialRestaurant,
   },
   reducers: {
     sortPopularity: (state) => {
@@ -30,9 +31,15 @@ export const restaurantsSlice = createSlice({
     reInitializeRestaurants: (state) => {
       state.changedValue = state.value;
     },
-    getRestaurant: (state,action) => {
-      const restaurantName:string = action.payload
-      state.chosenRestaurant = state.changedValue.filter((resaturant)=>resaturant.name == restaurantName)
+    getRestaurant: (state, action) => {
+      const restaurantName: string = action.payload;
+      const restaurantArray = state.changedValue.filter(
+        (resaturant) => resaturant.name === restaurantName
+      )
+      if (restaurantArray.length === 1){
+        const restaurant = restaurantArray.pop()
+        state.chosenRestaurant = restaurant!;
+      }
     }
   },
 });
