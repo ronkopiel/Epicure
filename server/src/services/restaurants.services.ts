@@ -1,45 +1,40 @@
-import { IStudant, StudantModal } from "../../model/studants.model";
-
-export const getStudant = async () => {
+import { restaurantModel } from "../../src/models/restaurants.model";
+import {IRestaurant} from "../../../epicure/src/data/interface"
+export const getRestaurants = async () => {
   try {
-    const studants = await StudantModal.find();
-    return studants;
+    const restaurants = await restaurantModel.find();
+    return restaurants;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const createStudant = async (studant: IStudant) => {
-  const _studant = new StudantModal(studant);
+export const createRestaurant = async (restaurant: IRestaurant) => {
+  const _restaurant = new restaurantModel(restaurant);
   try {
-    await _studant.save();
-    return _studant;
+    await _restaurant.save();
+    return _restaurant;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const deleteStudant = async (studantID: string) => {
+export const deleteRestaurant = async (restaurantID: string) => {
   try {
-    await StudantModal.findByIdAndDelete(studantID);
+    await restaurantModel.findByIdAndDelete(restaurantID);
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const updateStudant = async (id:string, studant:IStudant) => {
+export const updateRestaurant = async (id:string, restaurant:IRestaurant) => {
   try {
-   const _studant =  await StudantModal.findByIdAndUpdate(id, studant);
-   if(_studant){
-    return (_studant)
+   const _restaurant =  await restaurantModel.findByIdAndUpdate(id, restaurant);
+   if(_restaurant){
+    return (_restaurant)
    }
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-
-// export const register = (studant: any) => {
-//   data.studant.push(studant);
-//   return data.studant;
-// };

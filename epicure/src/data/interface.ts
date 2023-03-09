@@ -4,7 +4,7 @@
         lastName: string;
         portrait: string;
         isChefOfTheWeek: boolean;
-        isNew: boolean;
+        isNewChef: boolean;
         viewCount: number;
         resturants: number[];
         id: number;
@@ -22,7 +22,7 @@
         chefID: number;
         viewCount: number;
         signatureDishID:number;
-        isNew: boolean;
+        isNewRestaurant: boolean;
         dishes:number[];
     }
 
@@ -30,7 +30,7 @@
         resturantID: number;
         name: string;
         ingredients: string;
-        price: any;
+        price: number;
         image: string;
         isSpicy: boolean;
         isVegan: boolean;
@@ -39,6 +39,8 @@
         service: string;
     }
     export interface IChefsState {
+        loading: boolean
+        error: boolean
         value: IChef[]
         changedValue: IChef[]
     }

@@ -1,32 +1,32 @@
 import {
-    getStudant,
-    createStudant,
-    deleteStudant,
-    updateStudant,
-  } from "../service/studant.service/studant.service";
-  import express, { Request, Response } from "express";
+    getChefs,
+    createChef,
+    deleteChef,
+    updateChef,
+  } from "../services/chefs.services";
+  import { Request, Response } from "express";
   
-  export const getAllStudants = async (req: Request, res: Response) => {
+  export const getAllChefs = async (req: Request, res: Response) => {
     try {
-      const studants = await getStudant();
+      const chefs = await getChefs();
       return res
         .status(200)
-        .json(studants);
+        .json(chefs);
     } catch (err: any) {
       console.log(err);
       throw err;
     }
   };
   
-  export const addStudants = async (req: Request, res: Response) => {
+  export const addChefs = async (req: Request, res: Response) => {
     try {
-      const studants = createStudant(req.body);
+      const chefs = createChef(req.body);
       return res
         .status(200)
         .json({
           status: 200,
-          data: studants,
-          message: "Successfully Create Studant",
+          data: chefs,
+          message: "Successfully Created Chef",
         });
     } catch (err: any) {
       console.log(err);
@@ -34,29 +34,29 @@ import {
     }
   };
   
-  export const removeStudants = async (req: Request, res: Response) => {
+  export const removeChefs = async (req: Request, res: Response) => {
     try {
-      const studants = deleteStudant(req.body);
+      const chefs = deleteChef(req.body);
       return res
         .status(200)
         .json({
           status: 200,
-          data: studants,
-          message: "Successfully Remove Studant",
+          data: chefs,
+          message: "Successfully Removed Chef",
         });
     } catch (err: any) {
       console.log(err);
       throw err;
     }
   };
-  export const changeStudant = async (req: Request, res: Response) => {
+  export const changeChef = async (req: Request, res: Response) => {
     try {
-      const studants = updateStudant(req.body._id, req.body);
+      const chefs = updateChef(req.body._id, req.body);
       return res
         .status(200)
         .json({
           status: 200,
-          data: studants,
+          data: chefs,
           message: "Successfully Update Studant",
         });
     } catch (err: any) {

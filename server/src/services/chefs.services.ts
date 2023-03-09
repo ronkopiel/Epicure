@@ -1,45 +1,41 @@
-import { IStudant, StudantModal } from "../../model/studants.model";
+import { chefModel } from "../../src/models/chefs.model";
+import {IChef} from "../../../epicure/src/data/interface"
 
-export const getStudant = async () => {
+export const getChefs = async () => {
   try {
-    const studants = await StudantModal.find();
-    return studants;
+    const chefs = await chefModel.find();
+    return chefs;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const createStudant = async (studant: IStudant) => {
-  const _studant = new StudantModal(studant);
+export const createChef = async (chef: IChef) => {
+  const _chef = new chefModel(chef);
   try {
-    await _studant.save();
-    return _studant;
+    await _chef.save();
+    return _chef;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const deleteStudant = async (studantID: string) => {
+export const deleteChef = async (chefID: string) => {
   try {
-    await StudantModal.findByIdAndDelete(studantID);
+    await chefModel.findByIdAndDelete(chefID);
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const updateStudant = async (id:string, studant:IStudant) => {
+export const updateChef = async (id:string, chef:IChef) => {
   try {
-   const _studant =  await StudantModal.findByIdAndUpdate(id, studant);
-   if(_studant){
-    return (_studant)
+   const _chef =  await chefModel.findByIdAndUpdate(id, chef);
+   if(_chef ){
+    return (_chef )
    }
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-
-// export const register = (studant: any) => {
-//   data.studant.push(studant);
-//   return data.studant;
-// };

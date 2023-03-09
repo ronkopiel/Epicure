@@ -1,18 +1,19 @@
 import { Schema, model } from "mongoose";
 import mongoose from "mongoose";
+import {IDish} from "../../../epicure/src/data/interface"
 
-export interface IStudant{
-    first: string;
-    last:string;
-    email:string;
-    password:string;
-}
 
-export const studantSchema = new Schema<IStudant>({
-    first: {type: String, required:true},
-    last:{type: String, required:true},
-    email:{type: String, required:true},
-    password:{type: String, required:true}
+export const dishSchema = new Schema<IDish>({
+    resturantID: {type: Number, required:true},
+    name: {type: String, required:true},
+    ingredients: {type: String, required:true},
+    price: {type: Number, required:true},
+    image: {type: String, required:true},
+    isSpicy: {type: Boolean, required:true},
+    isVegan: {type: Boolean, required:true},
+    isVegitarian: {type: Boolean, required:true},
+    id: {type: Number, required:true},
+    service: {type: String, required:true},
 })
 
-export const StudantModal = mongoose.model<IStudant>("students", studantSchema);
+export const dishModel = mongoose.model<IDish>("dishes", dishSchema);

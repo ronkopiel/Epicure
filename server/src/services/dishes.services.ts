@@ -1,45 +1,40 @@
-import { IStudant, StudantModal } from "../../model/studants.model";
-
-export const getStudant = async () => {
+import { dishModel } from "../../src/models/dishes.model";
+import {IDish} from "../../../epicure/src/data/interface"
+export const getDishes = async () => {
   try {
-    const studants = await StudantModal.find();
-    return studants;
+    const dishes = await dishModel.find();
+    return dishes;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const createStudant = async (studant: IStudant) => {
-  const _studant = new StudantModal(studant);
+export const createDish = async (dish: IDish) => {
+  const _dish = new dishModel(dish);
   try {
-    await _studant.save();
-    return _studant;
+    await _dish.save();
+    return _dish;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const deleteStudant = async (studantID: string) => {
+export const deleteDish = async (dishID: string) => {
   try {
-    await StudantModal.findByIdAndDelete(studantID);
+    await dishModel.findByIdAndDelete(dishID);
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-export const updateStudant = async (id:string, studant:IStudant) => {
+export const updateDish = async (id:string, dish:IDish) => {
   try {
-   const _studant =  await StudantModal.findByIdAndUpdate(id, studant);
-   if(_studant){
-    return (_studant)
+   const _dish =  await dishModel.findByIdAndUpdate(id, dish);
+   if(_dish){
+    return (_dish)
    }
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-
-// export const register = (studant: any) => {
-//   data.studant.push(studant);
-//   return data.studant;
-// };

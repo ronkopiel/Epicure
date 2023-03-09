@@ -1,32 +1,32 @@
 import {
-    getStudant,
-    createStudant,
-    deleteStudant,
-    updateStudant,
-  } from "../service/studant.service/studant.service";
-  import express, { Request, Response } from "express";
+    getRestaurants,
+    createRestaurant,
+    deleteRestaurant,
+    updateRestaurant,
+  } from "../services/restaurants.services";
+  import  { Request, Response } from "express";
   
-  export const getAllStudants = async (req: Request, res: Response) => {
+  export const getAllRestaurants = async (req: Request, res: Response) => {
     try {
-      const studants = await getStudant();
+      const restaurants = await getRestaurants();
       return res
         .status(200)
-        .json(studants);
+        .json(restaurants);
     } catch (err: any) {
       console.log(err);
       throw err;
     }
   };
   
-  export const addStudants = async (req: Request, res: Response) => {
+  export const addRestaurants = async (req: Request, res: Response) => {
     try {
-      const studants = createStudant(req.body);
+      const restaurants = createRestaurant(req.body);
       return res
         .status(200)
         .json({
           status: 200,
-          data: studants,
-          message: "Successfully Create Studant",
+          data: restaurants,
+          message: "Successfully Create Restaurant",
         });
     } catch (err: any) {
       console.log(err);
@@ -34,30 +34,30 @@ import {
     }
   };
   
-  export const removeStudants = async (req: Request, res: Response) => {
+  export const removeRestaurants = async (req: Request, res: Response) => {
     try {
-      const studants = deleteStudant(req.body);
+      const restaurants = deleteRestaurant(req.body);
       return res
         .status(200)
         .json({
           status: 200,
-          data: studants,
-          message: "Successfully Remove Studant",
+          data: restaurants,
+          message: "Successfully Remove Restaurant",
         });
     } catch (err: any) {
       console.log(err);
       throw err;
     }
   };
-  export const changeStudant = async (req: Request, res: Response) => {
+  export const changeRestaurant = async (req: Request, res: Response) => {
     try {
-      const studants = updateStudant(req.body._id, req.body);
+      const restaurants = updateRestaurant(req.body._id, req.body);
       return res
         .status(200)
         .json({
           status: 200,
-          data: studants,
-          message: "Successfully Update Studant",
+          data: restaurants,
+          message: "Successfully Update Restaurant",
         });
     } catch (err: any) {
       console.log(err);

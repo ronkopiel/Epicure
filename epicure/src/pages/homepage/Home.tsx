@@ -21,12 +21,32 @@ import {
   IChefsState,
   IDishesState,
 } from "../../data/interface";
-
-const Home: React.FC = () => {
+import { setChefs, setError, setLoading,  } from "../../features/chefsSlicer";
+import axios from "axios";
+export const api = axios.create({
+  baseURL: "http://localhost:8000/api/",
+  withCredentials: false,
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+});
+const Home = async  () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(sortPopularity());
-  }, []);
+   function fetchChefs() {
+   return  () => {
+      api
+        .get("/chefs")
+        .then((response) => {
+          dispatch(setChefs(response.data));
+        })
+        .catch((er) => {
+          dispatch(setError());
+        });
+    }};
+   useEffect(() => {
+    fetchChefs();
+  }, [fetchChefs]);
   const chefs: IChefsState["value"] = useSelector(
     (state: IRootState) => state.chefs.value
   );
@@ -114,7 +134,7 @@ const Home: React.FC = () => {
               lastName={chef.lastName}
               portrait={chef.portrait}
               isChefOfTheWeek={chef.isChefOfTheWeek}
-              isNew={chef.isNew}
+              isNewChef={chef.isNewChef}
               viewCount={chef.viewCount}
               resturants={chef.resturants}
               id={chef.id}

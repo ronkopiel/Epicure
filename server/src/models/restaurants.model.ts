@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 import mongoose from "mongoose";
+import {IRestaurant} from "../../../epicure/src/data/interface"
 
 export interface IStudant{
     first: string;
@@ -8,11 +9,19 @@ export interface IStudant{
     password:string;
 }
 
-export const studantSchema = new Schema<IStudant>({
-    first: {type: String, required:true},
-    last:{type: String, required:true},
-    email:{type: String, required:true},
-    password:{type: String, required:true}
+export const restaurantSchema = new Schema<IRestaurant>({
+    id: {type: Number, required:true},
+    name: {type: String, required:true},
+    img: {type: String, required:true},
+    openingHour: {type: Number, required:true},
+    closingHour: {type: Number, required:true},
+    address: {type: String, required:true},
+    rating: {type: Number, required:true},
+    chefID: {type: Number, required:true},
+    viewCount: {type: Number, required:true},
+    signatureDishID:{type: Number, required:true},
+    isNewRestaurant: {type: Boolean, required:true},
+    dishes: {type: [Number], required:true},
 })
 
-export const StudantModal = mongoose.model<IStudant>("students", studantSchema);
+export const restaurantModel = mongoose.model<IRestaurant>("restaurants", restaurantSchema);

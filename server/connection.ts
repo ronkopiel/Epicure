@@ -1,6 +1,8 @@
 import { connect } from "mongoose";
-
-const uri = "mongodb+srv://ronkopiel:ykyw3oRBLlnlccNw@epicure.i4eqv3c.mongodb.net/?retryWrites=true&w=majority"
+import dotenv from "dotenv"
+dotenv.config()
+const token = process.env.TOKEN_SECRET
+const uri = token
 
 const dbName = "epicure";
 
