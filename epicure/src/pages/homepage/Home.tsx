@@ -8,12 +8,6 @@ import Footer from "../../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { IRootState } from "../../store";
 import {
-  getNewRestaurants,
-  getOpenRestaurants,
-  reInitializeRestaurants,
-  sortPopularity,
-} from "../../features/restaurantsSlicer";
-import {
   IChef,
   IRestaurant,
   IDish,
@@ -21,12 +15,11 @@ import {
   IChefsState,
   IDishesState,
 } from "../../data/interface";
+import { sortPopularity } from "../../features/restaurantsSlicer";
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(sortPopularity());
-  }, []);
+
   const chefs: IChefsState["value"] = useSelector(
     (state: IRootState) => state.chefs.value
   );
@@ -36,7 +29,7 @@ const Home: React.FC = () => {
   const dishes: IDishesState["initialDishes"] = useSelector(
     (state: IRootState) => state.dishes.initialDishes
   );
-
+  dispatch(sortPopularity())
   const popularRestaurants = restaurants.slice(0, 3);
   const popularRestaurantsSignatueDishes: number[] = [];
   popularRestaurants.forEach((restaurant) => {
@@ -114,7 +107,7 @@ const Home: React.FC = () => {
               lastName={chef.lastName}
               portrait={chef.portrait}
               isChefOfTheWeek={chef.isChefOfTheWeek}
-              isNew={chef.isNew}
+              isNewChef={chef.isNewChef}
               viewCount={chef.viewCount}
               resturants={chef.resturants}
               id={chef.id}

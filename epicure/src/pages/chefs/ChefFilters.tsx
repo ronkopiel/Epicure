@@ -11,17 +11,14 @@ const ChefFilters: React.FC = () => {
     <div className="filters-container">
       <div className="filters">
         <FilterButton
-          init={reInitializeChefs}
           function={reInitializeChefs}
           text={"All"}
         />
         <FilterButton
-          init={reInitializeChefs}
           function={getNewChefs}
           text={"New"}
         />
         <FilterButton
-          init={reInitializeChefs}
           function={sortViewCount}
           text={"Most Viewd"}
         />

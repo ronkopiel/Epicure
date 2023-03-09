@@ -6,8 +6,7 @@ import Restaurants from './pages/restaurants/Restaurants';
 import Chefs from './pages/chefs/Chefs';
 import Restaurant from './pages/restaurants/Restaurant';
 
-
-function App() {
+ function App() {
   return (
     <BrowserRouter>
     <Routes>

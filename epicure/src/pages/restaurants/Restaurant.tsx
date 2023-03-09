@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import DishCard from "../../components/DishCard";
@@ -7,9 +7,8 @@ import {
   IChefsState,
   IDish,
   IDishesState,
-  IRestaurant,
 } from "../../data/interface";
-import { setRestaurantDishes } from "../../features/dishesSlicer";
+import { setRestaurantDishes, setServiceDishes } from "../../features/dishesSlicer";
 import { getRestaurant } from "../../features/restaurantsSlicer";
 import { IRootState } from "../../store";
 import DishesFilters from "./DishesFilters";
@@ -17,18 +16,25 @@ import DishesFilters from "./DishesFilters";
 const Restaurant: React.FC = () => {
   const dispatch = useDispatch();
   const { restaurantName } = useParams();
+  useEffect(() => {
     dispatch(getRestaurant(restaurantName));
+  }, [dispatch,restaurantName]);
   const restaurantArray = useSelector(
     (state: IRootState) => state.restaurants.chosenRestaurant
   );
-  const restaurant: IRestaurant = restaurantArray[0];  
+  const [restaurant, setRestaurant] = useState(restaurantArray);
+  useEffect(() => {
     dispatch(setRestaurantDishes(restaurant.dishes));
+  }, [dispatch,restaurant.dishes]);
   const dishes: IDishesState["restaurantDishes"] = useSelector(
-    (state: IRootState) => state.dishes.restaurantDishes
+    (state: IRootState) => state.dishes.serviceDishes
   );
+  
   const chefs: IChefsState["value"] = useSelector(
     (state: IRootState) => state.chefs.value
   );
+  const [chef, setChef] = useState(chefs[restaurant.chefID]);
+
   const date = new Date();
   return (
     <>
@@ -37,9 +43,9 @@ const Restaurant: React.FC = () => {
         <img src={restaurant.img} alt="" className="restaurant-hero" />
         <h3>{restaurant.name}</h3>
         <div className="chef-name-big">
-          {chefs[restaurant.chefID].firstName +
+          {chef.firstName +
             " " +
-            chefs[restaurant.chefID].lastName}
+            chef.lastName}
         </div>
         <div className="restaurant-status">
           <img src="/assets/clock-icon 1.svg" alt="" />
@@ -48,7 +54,7 @@ const Restaurant: React.FC = () => {
             ? " Open now"
             : " Closed"}
         </div>
-        <DishesFilters />
+        <DishesFilters  />
         <div className="dish-grid">
           {dishes.map((dish: IDish, index: number) => {
             return (

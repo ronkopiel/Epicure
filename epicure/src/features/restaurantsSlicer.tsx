@@ -1,7 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
-import data from "../data/resturants.json";
+import { IRestaurant } from "../data/interface";
+import { api } from "./chefsSlicer";
+const fetchRestaurants = () => {
+  const response = api
+    .get("/restaurants")
+    .then((response) => {
+      return response.data[0].restaurants;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  return response;
+};
 
-const initialRestaurants = data[0].restaurants;
+const initialRestaurants: IRestaurant[] = await fetchRestaurants();
+const initialRestaurant = initialRestaurants[0];
 const date = new Date();
 
 export const restaurantsSlice = createSlice({
@@ -9,7 +22,7 @@ export const restaurantsSlice = createSlice({
   initialState: {
     value: initialRestaurants,
     changedValue: initialRestaurants,
-    chosenRestaurant: [{}],
+    chosenRestaurant: initialRestaurant,
   },
   reducers: {
     sortPopularity: (state) => {
@@ -18,7 +31,9 @@ export const restaurantsSlice = createSlice({
       );
     },
     getNewRestaurants: (state) => {
-      state.changedValue = state.value.filter((restaurant) => restaurant.isNew);
+      state.changedValue = state.value.filter(
+        (restaurant) => restaurant.isNewRestaurant
+      );
     },
     getOpenRestaurants: (state) => {
       state.changedValue = state.value.filter(
@@ -30,10 +45,16 @@ export const restaurantsSlice = createSlice({
     reInitializeRestaurants: (state) => {
       state.changedValue = state.value;
     },
-    getRestaurant: (state,action) => {
-      const restaurantName:string = action.payload
-      state.chosenRestaurant = state.changedValue.filter((resaturant)=>resaturant.name == restaurantName)
-    }
+    getRestaurant: (state, action) => {
+      const restaurantName: string = action.payload;
+      const restaurantArray = state.changedValue.filter(
+        (resaturant) => resaturant.name === restaurantName
+      );
+      if (restaurantArray.length === 1) {
+        const restaurant = restaurantArray.pop();
+        state.chosenRestaurant = restaurant!;
+      }
+    },
   },
 });
 
