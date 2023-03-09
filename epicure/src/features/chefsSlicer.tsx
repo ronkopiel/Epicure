@@ -1,20 +1,30 @@
-import { AnyAction, createSlice, Dispatch } from "@reduxjs/toolkit";
-import data from "../data/resturants.json";
+import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import {  IChefsState } from "../data/interface";
-import { useDispatch } from "react-redux";
+import { IChefsState } from "../data/interface";
 
-export const initialState:IChefsState = {
+
+export const api = axios.create({
+  baseURL: "http://localhost:8000/api/",
+});
+const fetchChefs = () => {
+  const response = api
+  .get("/chefs")
+  .then((response) => {
+    return response.data[0].chefs
+  })
+  .catch((error) => {
+    console.log(error);
+  }
+  )
+  return response;
+}
+const chefs = await fetchChefs()
+export const initialState: IChefsState = {
   loading: false,
   error: false,
-  value: [] as IChefsState['value'],
-  changedValue: [] as IChefsState['changedValue'],
+  value: chefs,
+  changedValue: chefs
 };
-
-const client = axios.create({
-  baseURL: "http://localhost:8000/api/chefs",
-});
-// GET with Axios
 
 export const chefsSlice = createSlice({
   name: "chefs",
@@ -55,15 +65,7 @@ export const {
   setChefs,
   setError,
 } = chefsSlice.actions;
-export const chefsSelector = (state:IChefsState) => state.value;
+export const chefsSelector = (state: IChefsState) => state.value;
 export default chefsSlice.reducer;
-export const api = axios.create({
-  baseURL: "http://localhost:8000/api/",
-  withCredentials: false,
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-});
 
 // fetch all items

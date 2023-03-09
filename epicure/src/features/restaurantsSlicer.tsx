@@ -1,8 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
-import data from "../data/resturants.json";
+import { IRestaurant } from "../data/interface";
+import { api } from "./chefsSlicer";
+const fetchRestaurants = () => {
+  const response = api
+    .get("/restaurants")
+    .then((response) => {
+      return response.data[0].restaurants;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  return response;
+};
 
-const initialRestaurants = data[0].restaurants;
-const initialRestaurant = initialRestaurants[0]
+const initialRestaurants: IRestaurant[] = await fetchRestaurants();
+const initialRestaurant = initialRestaurants[0];
 const date = new Date();
 
 export const restaurantsSlice = createSlice({
@@ -19,7 +31,9 @@ export const restaurantsSlice = createSlice({
       );
     },
     getNewRestaurants: (state) => {
-      state.changedValue = state.value.filter((restaurant) => restaurant.isNew);
+      state.changedValue = state.value.filter(
+        (restaurant) => restaurant.isNewRestaurant
+      );
     },
     getOpenRestaurants: (state) => {
       state.changedValue = state.value.filter(
@@ -35,12 +49,12 @@ export const restaurantsSlice = createSlice({
       const restaurantName: string = action.payload;
       const restaurantArray = state.changedValue.filter(
         (resaturant) => resaturant.name === restaurantName
-      )
-      if (restaurantArray.length === 1){
-        const restaurant = restaurantArray.pop()
+      );
+      if (restaurantArray.length === 1) {
+        const restaurant = restaurantArray.pop();
         state.chosenRestaurant = restaurant!;
       }
-    }
+    },
   },
 });
 

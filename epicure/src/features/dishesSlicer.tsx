@@ -1,10 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
-import data from "../data/resturants.json";
-const initialDishes = data[0].dishes;
+import { api } from "./chefsSlicer";
+import { IDish } from "../data/interface";
+
+
+const fetchDishes = () => {
+  const response = api
+  .get("/dishes")
+  .then((response) => {
+    return response.data[0].dishes
+  })
+  .catch((error) => {
+    console.log(error);
+  }
+  )
+  return response;
+}
+
+const initialDishes:IDish[] = await fetchDishes()
 const initialRestaurantDishIDs: number[] = [];
+
+
 export const dishesSlice = createSlice({
   name: "dishes",
   initialState: {
+
     initialDishes: initialDishes,
     restaurantDishes: initialDishes,
     serviceDishes: initialDishes,
