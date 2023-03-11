@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IRestaurant } from "../data/interface";
+import { IDish, IRestaurant } from "../data/interface";
 import { api } from "./chefsSlicer";
 const fetchRestaurants = () => {
   const response = api
@@ -55,6 +55,19 @@ export const restaurantsSlice = createSlice({
         state.chosenRestaurant = restaurant!;
       }
     },
+    filterRestaurantsByPrice: (state, action) => {
+      const relevantDishes: number[] = [];
+      action.payload.forEach((dish: IDish, ) => {
+        relevantDishes.push(dish.resturantID);
+      });
+      state.changedValue = state.value.filter((restaurant) => relevantDishes.includes(restaurant.id))
+    },
+    filterRestaurantsByRating: (state, action) => {
+      state.changedValue = action.payload
+    },
+    filterRestaurantsByDistance: (state, action) => {
+      state.changedValue = action.payload
+    },
   },
 });
 
@@ -65,6 +78,9 @@ export const {
   getNewRestaurants,
   sortPopularity,
   getRestaurant,
+  filterRestaurantsByPrice,
+  filterRestaurantsByRating,
+  filterRestaurantsByDistance
 } = restaurantsSlice.actions;
 
 export default restaurantsSlice.reducer;
