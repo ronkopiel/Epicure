@@ -635,17 +635,17 @@ small {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 60px;
   align-items: center;
   gap: 47px;
 }
 .popup-filter {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 0px;
+  align-items: center;
+  height: 60px;
   gap: 8px;
+  position: relative;
 }
 .popup-filter-content {
   font-family: "Helvetica Neue thin";
@@ -657,9 +657,7 @@ small {
   color: #000000;
   text-transform: none;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
 
 }
 .range-container{
@@ -669,7 +667,7 @@ font-weight: 400;
 font-size: 18px;
 line-height: 21px;
 letter-spacing: 1.92px;
-
+text-decoration: none;
 color: #000000;
 
 }
@@ -689,6 +687,7 @@ color: #000000;
   letter-spacing: 1.97px;
   color: #000000;
   text-decoration: none;
+  
 }
 .popup {
   width: 353px;
@@ -698,6 +697,9 @@ color: #000000;
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: absolute;
+  top: 60px;
+  
 }
 .restaurant-hero {
   width: 100%;
@@ -758,4 +760,25 @@ gap: 2px;
 
 padding: 0px;
 gap: 2px;
+}
+.hide {
+  display: none
+}
+#clear-button {
+justify-content: center;
+align-items: center;
+padding: 5px 15px;
+gap: 10px;
+width: 112px;
+height: 30px;
+border: 1px solid #000000;
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 20px;
+text-align: center;
+letter-spacing: 2.67px;
+text-transform: uppercase;
+color: #000000;
 }
