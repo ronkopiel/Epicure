@@ -12,7 +12,6 @@ import {
   reInitializeChefs,
 } from "../features/chefsSlicer";
 interface IFilterButton {
-  init: Function;
   function: Function;
   text: string;
 }
@@ -22,8 +21,7 @@ const FilterButton: React.FC<IFilterButton> = (props) => {
     <button
       className="filter"
       onClick={() => {
-        dispatch(props.init());
-        dispatch(props.function());
+        dispatch(props.function(props.text));
         console.log(props.function());
       }}
     >

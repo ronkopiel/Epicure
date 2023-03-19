@@ -574,8 +574,6 @@ small {
   width: 100%;
   height: 84px;
   background: #ffffff;
-  position: absolute;
-  bottom: 0;
 }
 .footer-links {
   display: flex;
